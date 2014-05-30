@@ -118,11 +118,11 @@
 			children = (
 				36574C8E193841E600F75616 /* PFAppDelegate.h */,
 				36574C8F193841E600F75616 /* PFAppDelegate.m */,
-				36574C97193841E600F75616 /* Images.xcassets */,
-				36574C86193841E600F75616 /* Supporting Files */,
 				36574CB41938441F00F75616 /* PFIndexViewController.h */,
 				36574CB51938441F00F75616 /* PFIndexViewController.m */,
 				36574CB61938441F00F75616 /* PFIndexViewController.xib */,
+				36574C97193841E600F75616 /* Images.xcassets */,
+				36574C86193841E600F75616 /* Supporting Files */,
 			);
 			path = SatitCMU;
 			sourceTree = "<group>";
