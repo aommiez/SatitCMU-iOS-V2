@@ -8,11 +8,15 @@
 
 #import "PFAppDelegate.h"
 
+
 @implementation PFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.tabbar = [[PFtabbar alloc] init];
+    self.update = [[PFUpdateViewController alloc] init];
+    self.window.rootViewController = self.tabbar;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFUpdateViewController.h"
+#import "PFtabbar.h"
 
 @interface PFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PFUpdateViewController *update;
+@property (strong, nonatomic) PFtabbar *tabbar;
 
 @end
