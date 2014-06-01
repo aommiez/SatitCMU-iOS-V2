@@ -47,6 +47,10 @@ int oldIndex;
     // Dispose of any resources that can be recreated.
 }
 
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - IBAction
 - (IBAction)tabBarItemTapped:(id)sender {
     self.tabBarView.alpha = 0.9;

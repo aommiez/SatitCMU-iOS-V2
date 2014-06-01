@@ -8,7 +8,6 @@
 
 #import "PFContactViewController.h"
 #import "PagedImageScrollView.h"
-#import "PFtabbar.h"
 
 @interface PFContactViewController ()
 
@@ -58,9 +57,6 @@
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
-//    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 48)];
-//    self.tableView.tableFooterView = footerView;
-    
     CALayer *mapbutton = [self.mapButton layer];
     [mapbutton setMasksToBounds:YES];
     [mapbutton setCornerRadius:7.0f];
@@ -97,10 +93,10 @@
 
 - (void)singleTapFullimg:(UITapGestureRecognizer *)gesture
 {
-//    int sum;
-//    sum = [self.current intValue]/32;
-//    NSString *num = [NSString stringWithFormat:@"%d",sum];
-//    [self.delegate PFContactViewController:self sum:self.arrcontactimg current:num];
+    int sum;
+    sum = [self.current intValue]/32;
+    NSString *num = [NSString stringWithFormat:@"%d",sum];
+    [self.delegate PFContactViewController:self sum:self.arrcontactimg current:num];
 }
 
 - (NSArray *)imageToArray:(NSDictionary *)images {

@@ -471,7 +471,7 @@ BOOL refreshData;
     cell.commentLabel.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"message"];
     cell.nameLabel.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"username"];
     
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"http://61.19.147.72/satit/api/user/%@/picture",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"]];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/user/%@/picture",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"]];
     NSURL *url = [NSURL URLWithString:urlStr];
     cell.myImageView.imageURL = url;
     

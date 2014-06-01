@@ -22,8 +22,6 @@
 		36574CBA1938444900F75616 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36574CB91938444900F75616 /* FacebookSDK.framework */; };
 		EA0566B719397BEE00951F80 /* ShowCaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0566B519397BEE00951F80 /* ShowCaseCell.m */; };
 		EA0566B819397BEE00951F80 /* ShowCaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0566B619397BEE00951F80 /* ShowCaseCell.xib */; };
-		EA0566BD19397DCF00951F80 /* PFtabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0566BB19397DCF00951F80 /* PFtabbar.m */; };
-		EA0566BE19397DCF00951F80 /* PFtabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0566BC19397DCF00951F80 /* PFtabbar.xib */; };
 		EA0869D11938CD490064D2DD /* PFMapViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0869CE1938CD490064D2DD /* PFMapViewController_Wide.xib */; };
 		EA0869D21938CD490064D2DD /* PFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0869D01938CD490064D2DD /* PFMapViewController.m */; };
 		EA0869DC1938CFEB0064D2DD /* ContactLabelDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0869D51938CFEB0064D2DD /* ContactLabelDescCell.m */; };
@@ -235,6 +233,13 @@
 		EAB7860719386A8B0067BE3D /* Icon_Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB785FB19386A8B0067BE3D /* Icon_Phone.png */; };
 		EAB7860819386A8B0067BE3D /* Icon_Website.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB785FC19386A8B0067BE3D /* Icon_Website.png */; };
 		EAB7860919386A8B0067BE3D /* Icon_Youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = EAB785FD19386A8B0067BE3D /* Icon_Youtube.png */; };
+		EAD3C2A4193B0F99008C1562 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2A3193B0F99008C1562 /* MobileCoreServices.framework */; };
+		EAD3C2A6193B0FB0008C1562 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2A5193B0FB0008C1562 /* SystemConfiguration.framework */; };
+		EAD3C2A8193B0FB7008C1562 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2A7193B0FB7008C1562 /* CFNetwork.framework */; };
+		EAD3C2AA193B0FD0008C1562 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2A9193B0FD0008C1562 /* CoreImage.framework */; };
+		EAD3C2AC193B0FE6008C1562 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AB193B0FE6008C1562 /* libz.dylib */; };
+		EAD3C2AE193B0FF0008C1562 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */; };
+		EAD3C2B0193B108C008C1562 /* dyci.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AF193B108C008C1562 /* dyci.framework */; };
 		EAF69C2D1938DE85004C94C8 /* PFShowcaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF69C2B1938DE85004C94C8 /* PFShowcaseViewController.m */; };
 		EAF69C2E1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF69C2C1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib */; };
 		EAF69C321938DFC9004C94C8 /* PFActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF69C301938DFC9004C94C8 /* PFActivityViewController.m */; };
@@ -279,9 +284,6 @@
 		EA0566B419397BEE00951F80 /* ShowCaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCaseCell.h; path = View/Showcase/ShowCaseCell.h; sourceTree = SOURCE_ROOT; };
 		EA0566B519397BEE00951F80 /* ShowCaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCaseCell.m; path = View/Showcase/ShowCaseCell.m; sourceTree = SOURCE_ROOT; };
 		EA0566B619397BEE00951F80 /* ShowCaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowCaseCell.xib; path = View/Showcase/ShowCaseCell.xib; sourceTree = SOURCE_ROOT; };
-		EA0566BA19397DCF00951F80 /* PFtabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFtabbar.h; sourceTree = "<group>"; };
-		EA0566BB19397DCF00951F80 /* PFtabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFtabbar.m; sourceTree = "<group>"; };
-		EA0566BC19397DCF00951F80 /* PFtabbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFtabbar.xib; sourceTree = "<group>"; };
 		EA0869CE1938CD490064D2DD /* PFMapViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMapViewController_Wide.xib; path = View/Contact/Map/PFMapViewController_Wide.xib; sourceTree = SOURCE_ROOT; };
 		EA0869CF1938CD490064D2DD /* PFMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMapViewController.h; path = View/Contact/Map/PFMapViewController.h; sourceTree = SOURCE_ROOT; };
 		EA0869D01938CD490064D2DD /* PFMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMapViewController.m; path = View/Contact/Map/PFMapViewController.m; sourceTree = SOURCE_ROOT; };
@@ -657,6 +659,13 @@
 		EAB785FB19386A8B0067BE3D /* Icon_Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Phone.png; sourceTree = "<group>"; };
 		EAB785FC19386A8B0067BE3D /* Icon_Website.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Website.png; sourceTree = "<group>"; };
 		EAB785FD19386A8B0067BE3D /* Icon_Youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Youtube.png; sourceTree = "<group>"; };
+		EAD3C2A3193B0F99008C1562 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EAD3C2A5193B0FB0008C1562 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EAD3C2A7193B0FB7008C1562 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EAD3C2A9193B0FD0008C1562 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		EAD3C2AB193B0FE6008C1562 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		EAD3C2AF193B108C008C1562 /* dyci.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dyci.framework; path = ../Frameworks/dyci.framework; sourceTree = "<group>"; };
 		EAF69C2A1938DE85004C94C8 /* PFShowcaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFShowcaseViewController.h; path = View/Showcase/PFShowcaseViewController.h; sourceTree = SOURCE_ROOT; };
 		EAF69C2B1938DE85004C94C8 /* PFShowcaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFShowcaseViewController.m; path = View/Showcase/PFShowcaseViewController.m; sourceTree = SOURCE_ROOT; };
 		EAF69C2C1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFShowcaseViewController_Wide.xib; path = View/Showcase/PFShowcaseViewController_Wide.xib; sourceTree = SOURCE_ROOT; };
@@ -681,6 +690,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD3C2AE193B0FF0008C1562 /* libxml2.dylib in Frameworks */,
+				EAD3C2AC193B0FE6008C1562 /* libz.dylib in Frameworks */,
+				EAD3C2AA193B0FD0008C1562 /* CoreImage.framework in Frameworks */,
+				EAD3C2A8193B0FB7008C1562 /* CFNetwork.framework in Frameworks */,
+				EAD3C2B0193B108C008C1562 /* dyci.framework in Frameworks */,
+				EAD3C2A6193B0FB0008C1562 /* SystemConfiguration.framework in Frameworks */,
+				EAD3C2A4193B0F99008C1562 /* MobileCoreServices.framework in Frameworks */,
 				36574C82193841E600F75616 /* CoreGraphics.framework in Frameworks */,
 				36574CBA1938444900F75616 /* FacebookSDK.framework in Frameworks */,
 				36574C84193841E600F75616 /* UIKit.framework in Frameworks */,
@@ -723,6 +739,13 @@
 		36574C7E193841E600F75616 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAD3C2AF193B108C008C1562 /* dyci.framework */,
+				EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */,
+				EAD3C2AB193B0FE6008C1562 /* libz.dylib */,
+				EAD3C2A9193B0FD0008C1562 /* CoreImage.framework */,
+				EAD3C2A7193B0FB7008C1562 /* CFNetwork.framework */,
+				EAD3C2A5193B0FB0008C1562 /* SystemConfiguration.framework */,
+				EAD3C2A3193B0F99008C1562 /* MobileCoreServices.framework */,
 				36574CB91938444900F75616 /* FacebookSDK.framework */,
 				36574C7F193841E600F75616 /* Foundation.framework */,
 				36574C81193841E600F75616 /* CoreGraphics.framework */,
@@ -776,17 +799,6 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		EA0566B919397DCF00951F80 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				EA0566BA19397DCF00951F80 /* PFtabbar.h */,
-				EA0566BB19397DCF00951F80 /* PFtabbar.m */,
-				EA0566BC19397DCF00951F80 /* PFtabbar.xib */,
-			);
-			name = Tabbar;
-			path = View/Tabbar;
-			sourceTree = SOURCE_ROOT;
 		};
 		EA0869D31938CFD60064D2DD /* Contact */ = {
 			isa = PBXGroup;
@@ -848,7 +860,6 @@
 		EA0F5689193848300015DCEF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EA0566B919397DCF00951F80 /* Tabbar */,
 				EA086A131938D6E40064D2DD /* Login */,
 				EA0F568D1938484C0015DCEF /* Contact */,
 				EA0F568C193848470015DCEF /* Activity */,
@@ -1641,7 +1652,6 @@
 				EAB7860019386A8B0067BE3D /* Chapter_03.png in Resources */,
 				EAB7860619386A8B0067BE3D /* Icon_Facebook.png in Resources */,
 				EA7FCB1319388D9B00AB01A6 /* icon_reload.png in Resources */,
-				EA0566BE19397DCF00951F80 /* PFtabbar.xib in Resources */,
 				EAB7860319386A8B0067BE3D /* Chapter_06.png in Resources */,
 				EA0869F61938D3290064D2DD /* SubmitBottonIp5@2x.png in Resources */,
 				EA0F5867193861B20015DCEF /* TapkuLibrary.bundle in Resources */,
@@ -1725,7 +1735,6 @@
 				EA0F5844193861B20015DCEF /* PSTCollectionViewController.m in Sources */,
 				EA0F581E193861B20015DCEF /* AFURLSessionManager.m in Sources */,
 				EA0F589E193861B20015DCEF /* UIScrollview+TKCategory.m in Sources */,
-				EA0566BD19397DCF00951F80 /* PFtabbar.m in Sources */,
 				EA0F585E193861B20015DCEF /* NSDate+Helper.m in Sources */,
 				EA0869E01938CFEB0064D2DD /* UILabel+UILabelDynamicHeight.m in Sources */,
 				EA0F5849193861B20015DCEF /* PSTCollectionViewUpdateItem.m in Sources */,
