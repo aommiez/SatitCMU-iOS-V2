@@ -18,7 +18,7 @@
 
 @protocol PFContactViewControllerDelegate <NSObject>
 
-- (void)PFContactViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
+- (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
 - (void)HideTabbar;
 - (void)ShowTabbar;
 

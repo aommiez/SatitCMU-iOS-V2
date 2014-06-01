@@ -17,6 +17,7 @@
 
 @protocol PFActivityViewControllerDelegate <NSObject>
 
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link;
 - (void)HideTabbar;
 - (void)ShowTabbar;
 
@@ -29,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *arrObj;
-@property (strong, nonatomic) IBOutlet UIControl *headerView;
+
 @property (weak, nonatomic) IBOutlet UILabel *mtext;
 @property (strong, nonatomic) PESatitApiManager *satitApi;
 @property UIERealTimeBlurView *blur;
@@ -40,5 +41,7 @@
 
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *act;
 @property (retain, nonatomic) IBOutlet UILabel *loadLabel;
+
+- (IBAction)filterTapped:(id)sender;
 
 @end

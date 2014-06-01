@@ -50,6 +50,7 @@ BOOL newMedia;
         
     }
     
+    update.delegate = self;
     activity.delegate = self;
     contact.delegate = self;
     
@@ -153,7 +154,43 @@ BOOL newMedia;
     [self.tabBarViewController showTabBarWithAnimation:YES];
 }
 
-- (void)PFContactViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current {
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link{
+    
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    [imageCache clearMemory];
+    [imageCache clearDisk];
+    [imageCache cleanDisk];
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+	NSMutableArray *thumbs = [[NSMutableArray alloc] init];
+    MWPhoto *photo;
+    BOOL displayActionButton = YES;
+    BOOL displaySelectionButtons = NO;
+    BOOL displayNavArrows = NO;
+    BOOL enableGrid = YES;
+    BOOL startOnGrid = NO;
+    BOOL uploadp = NO;
+    photo = [MWPhoto photoWithURL:[[NSURL alloc] initWithString:link]];
+    [photos addObject:photo];
+    enableGrid = NO;
+    self.photos = photos;
+    self.thumbs = thumbs;
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = displayActionButton;
+    browser.displayNavArrows = displayNavArrows;
+    browser.displaySelectionButtons = displaySelectionButtons;
+    browser.alwaysShowControls = displaySelectionButtons;
+    browser.zoomPhotosToFill = YES;
+    browser.enableGrid = enableGrid;
+    browser.startOnGrid = startOnGrid;
+    browser.uploadButton = uploadp;
+    [browser setCurrentPhotoIndex:0];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
+    
+}
+
+- (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current {
     
     SDImageCache *imageCache = [SDImageCache sharedImageCache];
     [imageCache clearMemory];

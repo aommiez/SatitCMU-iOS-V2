@@ -14,6 +14,7 @@
 #import <Social/Social.h>
 
 #import "PFNewsCommentCell.h"
+#import "PFSeeAccountViewController.h"
 
 @protocol PFActivityDetailViewControllerDelegate <NSObject>
 
@@ -30,15 +31,17 @@
 @property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *labelMsg;
 @property (strong, nonatomic) IBOutlet UIButton *summitButton;
 @property (strong, nonatomic) PESatitApiManager *satitApi;
+
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)joinTapped:(id)sender;
+- (IBAction)postCommentTapped:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UIView *textCommentView;
 @property (weak, nonatomic) IBOutlet UIButton *postBut;
 @property (weak, nonatomic) IBOutlet UITextView *textComment;
 @property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) NSString *paging;
-- (IBAction)postCommentTapped:(id)sender;
 
 @property (assign, nonatomic) id <PFActivityDetailViewControllerDelegate> delegate;
 

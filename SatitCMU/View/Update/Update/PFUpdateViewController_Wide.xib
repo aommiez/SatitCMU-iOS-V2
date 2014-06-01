@@ -8,10 +8,11 @@
             <connections>
                 <outlet property="act" destination="Y5r-Wc-ZxQ" id="4KA-tZ-Dze"/>
                 <outlet property="loadLabel" destination="Wjd-6e-YOd" id="Tmc-zs-qxx"/>
-                <outlet property="navBar" destination="M7x-X9-rEK" id="rUR-z6-PcY"/>
-                <outlet property="navController" destination="Na7-kF-8Yh" id="4es-W6-zM8"/>
-                <outlet property="navItem" destination="w0W-7C-S9Y" id="Rij-TY-h57"/>
+                <outlet property="navBar" destination="9pU-Br-5XC" id="fnJ-5a-1rg"/>
+                <outlet property="navController" destination="O7s-zs-QMj" id="MCV-tM-OBH"/>
+                <outlet property="navItem" destination="jiT-va-ybd" id="Ya7-GZ-rzx"/>
                 <outlet property="popupwaitView" destination="mpP-EI-aHw" id="mKk-4W-cEk"/>
+                <outlet property="tableView" destination="Rcg-kl-kxT" id="1e1-y4-EGG"/>
                 <outlet property="updateButton" destination="Hxt-Ql-I5f" id="veb-jU-Rcy"/>
                 <outlet property="view" destination="kwg-Vg-Ddc" id="Qgx-03-ki1"/>
                 <outlet property="waitView" destination="w8x-ze-HTj" id="Tth-91-r9k"/>
@@ -49,14 +50,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjd-6e-YOd">
-                    <rect key="frame" x="57" y="91" width="233" height="21"/>
+                    <rect key="frame" x="57" y="135" width="233" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Y5r-Wc-ZxQ">
-                    <rect key="frame" x="29" y="92" width="20" height="20"/>
+                    <rect key="frame" x="29" y="136" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
@@ -64,28 +65,58 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <navigationController definesPresentationContext="YES" id="Na7-kF-8Yh">
+        <navigationController definesPresentationContext="YES" id="O7s-zs-QMj">
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <size key="freeformSize" width="320" height="500"/>
-            <navigationBar key="navigationBar" contentMode="scaleToFill" id="M7x-X9-rEK" customClass="CRGradientNavigationBar">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="9pU-Br-5XC" customClass="CRGradientNavigationBar">
                 <autoresizingMask key="autoresizingMask"/>
             </navigationBar>
             <viewControllers>
-                <viewController id="jXC-7u-DPs">
+                <viewController id="8Vx-zZ-ei9">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HZa-vQ-q53"/>
-                        <viewControllerLayoutGuide type="bottom" id="vyp-Wf-yOs"/>
+                        <viewControllerLayoutGuide type="top" id="jOb-oZ-r32"/>
+                        <viewControllerLayoutGuide type="bottom" id="ri1-bP-h3v"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2DE-SX-9bN">
+                    <view key="view" contentMode="scaleToFill" id="QBB-yD-nX1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.29803921570000003" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-kl-kxT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="6xM-cp-KlX"/>
+                                    <outlet property="delegate" destination="-1" id="qem-SR-gFV"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-GE-1R7">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.98699999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxt-Ql-I5f">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.82745098039999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Update Filter">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterTapped:" destination="-1" eventType="touchUpInside" id="DFP-VC-uyH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Update" id="w0W-7C-S9Y"/>
+                    <navigationItem key="navigationItem" title="Update" id="jiT-va-ybd"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -94,15 +125,5 @@
                 </viewController>
             </viewControllers>
         </navigationController>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hxt-Ql-I5f">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.82745098039999998" alpha="1" colorSpace="deviceRGB"/>
-            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-            <state key="normal" title="Update Filter">
-                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-            </state>
-        </button>
     </objects>
 </document>

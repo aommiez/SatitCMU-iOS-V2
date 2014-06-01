@@ -58,8 +58,6 @@ BOOL refreshData;
     int num;
     num = (int) length;
     
-    NSLog(@"%@",self.obj);
-    
     if(num > 15){
         NSString *mySmallertitle= [mytitle substringToIndex:15];
         NSString *message = [NSString stringWithFormat:@"%@%@",mySmallertitle,@"..."];
@@ -84,7 +82,7 @@ BOOL refreshData;
                                placeholderImage:nil
                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                             imgView.image = image;
-                                            imgView.frame = CGRectMake(0, 64, image.size.width, image.size.height);
+                                            imgView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
                                             [self.headerView addSubview:imgView];
                                             UIView *lineMid = [[UIView alloc] initWithFrame:CGRectMake(imgView.frame.origin.x, imgView.frame.origin.y+imgView.frame.size.height, 220, 30)];
                                             lineMid.backgroundColor = [UIColor colorWithRed:0.0/255.0 green:174.0/255.0 blue:239.0/255.0 alpha:1.0];
@@ -125,7 +123,6 @@ BOOL refreshData;
                                             [contectView addSubview:msg];
                                             [self.headerView addSubview:contectView];
                                             
-                                            
                                             if ([[self.obj objectForKey:@"is_joined"] intValue] == 0 ) {
                                                 [self.summitButton setBackgroundImage:[UIImage imageNamed:@"SubmitBottonIp5.png"] forState:UIControlStateNormal];
                                                 [self.summitButton setTitle:@"Join" forState:UIControlStateNormal];
@@ -134,13 +131,12 @@ BOOL refreshData;
                                                 [self.summitButton setTitle:@"Joined" forState:UIControlStateNormal];
                                             }
                                             
-                                            self.summitButton.frame = CGRectMake(20, 30+image.size.height+lineMid.frame.size.height+contectView.frame.size.height+34, self.summitButton.frame.size.width, self.summitButton.frame.size.height);
+                                            self.summitButton.frame = CGRectMake(20, image.size.height+lineMid.frame.size.height+contectView.frame.size.height, self.summitButton.frame.size.width, self.summitButton.frame.size.height);
                                             self.summitButton.userInteractionEnabled = YES;
                                             [self.headerView addSubview:self.summitButton];
                                             
-                                            
-                                            
-                                            self.headerView.frame = CGRectMake(0, 0, 320, image.size.height+lineMid.frame.size.height+contectView.frame.size.height+130);
+
+                                            self.headerView.frame = CGRectMake(0, 0, 320, image.size.height+lineMid.frame.size.height+contectView.frame.size.height+66);
 
                                             self.tableView.tableHeaderView = self.headerView;
                                             if (IS_WIDESCREEN) {
@@ -171,7 +167,6 @@ BOOL refreshData;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)shareactivity {
@@ -207,24 +202,24 @@ BOOL refreshData;
         self.textComment.text = @"Add Comment";
     }
 
-//    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
-//        
-////        [self.satitApi setTokenForGuest];
-////        self.loginView = [[PELoginViewController alloc] init];
-////        [self.view addSubview:self.loginView.view];
-//        
-//    } else {
-//        NSString *urlString = [[NSString alloc]init];
-//        urlString = [[NSString alloc]initWithFormat:@"%@pic/%@?display=custom&size_x=640",API_URL,[self.obj objectForKey:@"picture_id"]];
-//        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-//            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-//            [controller addURL:[NSURL URLWithString:urlString]];
-//            [controller setInitialText:[self.obj objectForKey:@"message"]];
-//            [self presentViewController:controller animated:YES completion:Nil];
-//        } else {
-//            
-//        }
-//    }
+    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
+        
+//        [self.satitApi setTokenForGuest];
+//        self.loginView = [[PELoginViewController alloc] init];
+//        [self.view addSubview:self.loginView.view];
+        
+    } else {
+        NSString *urlString = [[NSString alloc]init];
+        urlString = [[NSString alloc]initWithFormat:@"%@pic/%@?display=custom&size_x=640",API_URL,[self.obj objectForKey:@"picture_id"]];
+        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            [controller addURL:[NSURL URLWithString:urlString]];
+            [controller setInitialText:[self.obj objectForKey:@"message"]];
+            [self presentViewController:controller animated:YES completion:Nil];
+        } else {
+            
+        }
+    }
 }
 
 - (void)joinTapped:(id)sender {
@@ -411,7 +406,7 @@ BOOL refreshData;
     [button setContentMode:UIViewContentModeScaleAspectFit];
     [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"linePrev.png"] forState:UIControlStateNormal];
-    //headerView.backgroundColor = [UIColor redColor];
+
     [headerView addSubview:button];
     [headerView addSubview:imgViewPrev];
     [headerView addSubview:imgViewLine];
@@ -600,17 +595,17 @@ BOOL refreshData;
     [self bgTapped:self];
     [self.textComment resignFirstResponder];
     
-//    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
-//        [self.satitApi setTokenForGuest];
-//        
-////        self.loginView = [[PELoginViewController alloc] init];
-////        [self.view addSubview:self.loginView.view];
-//
-//    } else {
-//        if (![self.textComment.text isEqualToString:@""]) {
-//            [self.satitApi CommentObjectId:[self.obj objectForKey:@"id"] msg:self.textComment.text];
-//        }
-//    }
+    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
+        [self.satitApi setTokenForGuest];
+        
+//        self.loginView = [[PELoginViewController alloc] init];
+//        [self.view addSubview:self.loginView.view];
+
+    } else {
+        if (![self.textComment.text isEqualToString:@""]) {
+            [self.satitApi CommentObjectId:[self.obj objectForKey:@"id"] msg:self.textComment.text];
+        }
+    }
     
 }
 
@@ -630,10 +625,10 @@ BOOL refreshData;
 }
 
 - (void)DidUserId:(NSString *)userId {
-//    PESeeAccountViewController *seeAct = [[PESeeAccountViewController alloc] initWithNibName:@"PESeeAccountViewController_Wide" bundle:nil];
-//    seeAct.delegate = self;
-//    seeAct.userId = userId;
-//    [self.navigationController pushViewController:seeAct animated:YES];
+    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
+    seeAct.delegate = self;
+    seeAct.userId = userId;
+    [self.navigationController pushViewController:seeAct animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -651,17 +646,16 @@ BOOL refreshData;
             
         }
 //    }
-    //    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)PFSeeAccountViewController:(id)sender viewPicture:(NSString *)link {
-    //[self.delegate PEActivityDetailViewControllerPhoto:link];
+    [self.delegate PFActivityDetailViewControllerPhoto:link];
 }
 
 -(void)singleTapping:(UIGestureRecognizer *)recognizer
 {
-//    NSString *picStr = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
-//    [self.delegate PEActivityDetailViewControllerPhoto:picStr];
+    NSString *picStr = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
+    [self.delegate PFActivityDetailViewControllerPhoto:picStr];
 }
 
 @end

@@ -198,7 +198,7 @@
 }
 
 - (void)PFActivityDetailViewControllerPhoto:(NSString *)link {
-    //[self.delegate PEActivityCalendarViewController:self viewPicture:link];
+    [self.delegate PFActivityCalendarViewController:self viewPicture:link];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

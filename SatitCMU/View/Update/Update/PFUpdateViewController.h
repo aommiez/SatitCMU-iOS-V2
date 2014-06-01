@@ -13,7 +13,19 @@
 #import "BBBadgeBarButtonItem.h"
 #import "AFNetworking.h"
 
-@interface PFUpdateViewController : UIViewController
+#import "UpdateCell.h"
+#import "PFNotifyViewController.h"
+#import "PFAccountViewController.h"
+
+@protocol PFUpdateViewControllerDelegate <NSObject>
+
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link;
+- (void)HideTabbar;
+- (void)ShowTabbar;
+
+@end
+
+@interface PFUpdateViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
@@ -24,7 +36,9 @@
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) IBOutlet UIButton *updateButton;
 @property UIERealTimeBlurView *blur;
+
 - (IBAction)filterTapped:(id)sender;
+
 @property (retain, nonatomic) NSString *paging;
 
 @property (nonatomic, weak ) NSString *desText;

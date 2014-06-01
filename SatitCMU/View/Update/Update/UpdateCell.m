@@ -1,14 +1,14 @@
 //
-//  PFNewsCommentCell.m
-//  DanceZone
+//  NewsCell.m
+//  SatitCMU
 //
-//  Created by aOmMiez on 9/26/56 BE.
-//  Copyright (c) 2556 Platwo fusion. All rights reserved.
+//  Created by MRG on 2/15/2557 BE.
+//  Copyright (c) 2557 Platwo fusion. All rights reserved.
 //
 
-#import "PFNewsCommentCell.h"
+#import "UpdateCell.h"
 
-@implementation PFNewsCommentCell
+@implementation UpdateCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,11 +24,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
-- (IBAction)userImgTapped:(id)sender {
-    NSString *userId = [[NSString alloc] initWithFormat:@"%ld",(long)self.imgBut.tag];
-    [self.delegate DidUserId:userId];
 }
 
 @end

@@ -96,7 +96,7 @@
     int sum;
     sum = [self.current intValue]/32;
     NSString *num = [NSString stringWithFormat:@"%d",sum];
-    [self.delegate PFContactViewController:self sum:self.arrcontactimg current:num];
+    [self.delegate PFGalleryViewController:self sum:self.arrcontactimg current:num];
 }
 
 - (NSArray *)imageToArray:(NSDictionary *)images {

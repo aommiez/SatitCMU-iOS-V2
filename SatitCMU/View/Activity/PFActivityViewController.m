@@ -47,9 +47,7 @@ BOOL refreshDataAc;
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Setting_icon"] style:UIBarButtonItemStyleDone target:nil action:@selector(setting)];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Calendar_icon"] style:UIBarButtonItemStyleDone target:nil action:@selector(caleader)];
-    self.navItem.leftBarButtonItem = leftButton;
     self.navItem.rightBarButtonItem = rightButton;
     
     loadAc = NO;
@@ -82,7 +80,11 @@ BOOL refreshDataAc;
     self.mtext.text = dateStringMFull;
     [self.satitApi getActivitiesByM:dateStringM year:dateStringY];
     
-    self.tableView.tableHeaderView = self.headerView;
+    UIView *hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.tableView.tableHeaderView = hv;
+    
+    UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 54)];
+    self.tableView.tableFooterView = fv;
     
 }
 
@@ -96,7 +98,7 @@ BOOL refreshDataAc;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setting {
+- (IBAction)filterTapped:(id)sender {
     
     [self.delegate HideTabbar];
     
@@ -208,7 +210,7 @@ BOOL refreshDataAc;
 }
 
 - (void)PFActivityCalendarViewController:(id)sender viewPicture:(NSString *)link {
-    //[self.delegate PEActivityViewController:self viewPicture:link];
+    [self.delegate PFImageViewController:self viewPicture:link];
 }
 
 - (void)PFActivityDetailViewControllerBack {
@@ -216,7 +218,7 @@ BOOL refreshDataAc;
 }
 
 - (void)PFActivityDetailViewControllerPhoto:(NSString *)link {
-    //[self.delegate PEActivityViewController:self viewPicture:link];
+    [self.delegate PFImageViewController:self viewPicture:link];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -1,14 +1,14 @@
 //
-//  PFNewsCommentCell.m
-//  DanceZone
+//  PENotificationCell.m
+//  SatitCMU
 //
-//  Created by aOmMiez on 9/26/56 BE.
-//  Copyright (c) 2556 Platwo fusion. All rights reserved.
+//  Created by Pariwat on 4/17/14.
+//  Copyright (c) 2014 Platwo fusion. All rights reserved.
 //
 
-#import "PFNewsCommentCell.h"
+#import "PFNotificationCell.h"
 
-@implementation PFNewsCommentCell
+@implementation PFNotificationCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -19,16 +19,16 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    // Initialization code
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
-- (IBAction)userImgTapped:(id)sender {
-    NSString *userId = [[NSString alloc] initWithFormat:@"%ld",(long)self.imgBut.tag];
-    [self.delegate DidUserId:userId];
 }
 
 @end
