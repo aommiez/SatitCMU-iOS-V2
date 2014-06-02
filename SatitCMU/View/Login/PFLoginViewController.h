@@ -25,7 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *blurView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
-@property (strong, nonatomic) IBOutlet UIView *regis;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailSignIn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordSignIn;

@@ -99,10 +99,20 @@ BOOL refreshDataNe;
 
 - (void)notify {
     
+    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
+        [self.satitApi setTokenForGuest];
+        self.loginView = [[PFLoginViewController alloc] init];
+        self.loginView.menu = @"notify";
+        self.loginView.delegate = self;
+        [self.view addSubview:self.loginView.view];
+    } else {
+    
     [self.delegate HideTabbar];
     PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
     notifyView.delegate = self;
     [self.navController pushViewController:notifyView animated:YES];
+        
+    }
     
 }
 
@@ -493,6 +503,14 @@ BOOL refreshDataNe;
         self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
     }
 }
+
+//- (void)PENotifyViewController:(id)sender{
+//    [self.delegate HideTabbar];
+//    
+//    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+//    notifyView.delegate = self;
+//    [self.navController pushViewController:notifyView animated:YES];
+//}
 
 - (void)PFAccountViewControllerBack {
     [self.delegate ShowTabbar];

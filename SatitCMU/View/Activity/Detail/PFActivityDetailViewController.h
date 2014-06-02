@@ -15,6 +15,7 @@
 
 #import "PFNewsCommentCell.h"
 #import "PFSeeAccountViewController.h"
+#import "PFLoginViewController.h"
 
 @protocol PFActivityDetailViewControllerDelegate <NSObject>
 
@@ -44,6 +45,7 @@
 @property (strong, nonatomic) NSString *paging;
 
 @property (assign, nonatomic) id <PFActivityDetailViewControllerDelegate> delegate;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;

@@ -20,7 +20,7 @@ BOOL newMedia;
      UIRemoteNotificationTypeBadge |
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
-    //[FBLoginView class];
+    [FBLoginView class];
     
     self.satitApi = [[PESatitApiManager alloc] init];
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {

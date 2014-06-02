@@ -204,9 +204,9 @@ BOOL refreshData;
 
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         
-//        [self.satitApi setTokenForGuest];
-//        self.loginView = [[PELoginViewController alloc] init];
-//        [self.view addSubview:self.loginView.view];
+        [self.satitApi setTokenForGuest];
+        self.loginView = [[PFLoginViewController alloc] init];
+        [self.view addSubview:self.loginView.view];
         
     } else {
         NSString *urlString = [[NSString alloc]init];
@@ -598,8 +598,8 @@ BOOL refreshData;
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
         
-//        self.loginView = [[PELoginViewController alloc] init];
-//        [self.view addSubview:self.loginView.view];
+        self.loginView = [[PFLoginViewController alloc] init];
+        [self.view addSubview:self.loginView.view];
 
     } else {
         if (![self.textComment.text isEqualToString:@""]) {

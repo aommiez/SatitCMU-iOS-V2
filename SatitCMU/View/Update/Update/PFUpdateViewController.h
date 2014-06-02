@@ -19,6 +19,7 @@
 #import "PFUpdateDetailViewController.h"
 #import "PFActivityDetailViewController.h"
 #import "PFGalleryViewController.h"
+#import "PFLoginViewController.h"
 
 @protocol PFUpdateViewControllerDelegate <NSObject>
 
@@ -49,6 +50,7 @@
 @property (nonatomic, strong) NSMutableArray *thumbs;
 
 @property AFHTTPRequestOperationManager *manager;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
