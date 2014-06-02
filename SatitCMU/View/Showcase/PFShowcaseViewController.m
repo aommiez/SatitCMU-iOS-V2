@@ -110,6 +110,15 @@ BOOL refreshDataz;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate HideTabbar];
+
+     PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+     showcaseGallery.delegate = self;
+     [self.navController pushViewController:showcaseGallery animated:YES];
+}
+
 #pragma mark - API Delegate
 
 - (void)PESatitApiManager:(id)sender galleryResponse:(NSDictionary *)response {
@@ -139,6 +148,10 @@ BOOL refreshDataz;
 
 - (void)PESatitApiManager:(id)sender galleryErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
+}
+
+- (void)PFGalleryViewControllerBack {
+    [self.delegate ShowTabbar];
 }
 
 #pragma mark -

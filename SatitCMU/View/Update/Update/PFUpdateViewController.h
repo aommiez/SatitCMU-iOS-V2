@@ -16,6 +16,9 @@
 #import "UpdateCell.h"
 #import "PFNotifyViewController.h"
 #import "PFAccountViewController.h"
+#import "PFUpdateDetailViewController.h"
+#import "PFActivityDetailViewController.h"
+#import "PFGalleryViewController.h"
 
 @protocol PFUpdateViewControllerDelegate <NSObject>
 

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PENewsDetailViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFUpdateDetailViewController">
             <connections>
                 <outlet property="commentButton" destination="3Ls-zl-Huw" id="DpB-Fg-QDa"/>
                 <outlet property="commentLabel" destination="2Bt-NO-E2t" id="ORF-87-cKL"/>

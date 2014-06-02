@@ -6,21 +6,24 @@
 //  Copyright (c) 2557 Platwo fusion. All rights reserved.
 //
 
-#import "PENewsDetailViewController.h"
+#import "PFUpdateDetailViewController.h"
 #import "UIView+MTAnimation.h"
-#include "PEAppDelegate.h"
+#include "PFAppDelegate.h"
 #define FONT_SIZE 15.0f
 #define CELL_CONTENT_WIDTH 280.0f
 #define CELL_CONTENT_MARGIN 4.0f
 #define FONT_SIZE_COMMENT 14.0f
-@interface PENewsDetailViewController ()
+
+@interface PFUpdateDetailViewController ()
 
 @end
 
-@implementation PENewsDetailViewController
+@implementation PFUpdateDetailViewController
+
 int maxH;
 BOOL noData;
 BOOL refreshData;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,7 +36,9 @@ BOOL refreshData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",self.obj);
+    
+    //NSLog(@"%@",self.obj);
+    
     maxH = 0;
     noData = NO;
     refreshData = NO;
@@ -138,6 +143,7 @@ BOOL refreshData;
     
     return YES;
 }
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if([text isEqualToString:@"\n"])
 	{
@@ -162,9 +168,11 @@ BOOL refreshData;
 	}
 	return YES;
 }
+
 - (void)textViewDidChange:(UITextView *)textView {
     [self.textComment scrollRangeToVisible:NSMakeRange([self.textComment.text length], 0)];
 }
+
 - (void)loadComment {
     if (!noData){
         refreshData = NO;
@@ -203,8 +211,8 @@ BOOL refreshData;
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
         
-        self.loginView = [[PELoginViewController alloc] init];
-        [self.view addSubview:self.loginView.view];
+//        self.loginView = [[PELoginViewController alloc] init];
+//        [self.view addSubview:self.loginView.view];
 
     } else {
         if (![self.textComment.text isEqualToString:@""]) {
@@ -219,6 +227,7 @@ BOOL refreshData;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.textComment resignFirstResponder];
@@ -252,6 +261,7 @@ BOOL refreshData;
         self.textComment.text = @"Add Comment";
     }
 }
+
 -(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self.arrObj count] < 4 ) {
         return 0;
@@ -342,7 +352,7 @@ BOOL refreshData;
     cell.nameLabel.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"username"];
     //NSLog(@"%@",[[[self.commentDict objectForKey:@"data"] objectAtIndex:indexPath.row] objectForKey:@"from"]);
     //cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"http://61.19.147.72/satit/api/user/%@/picture",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"]];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/user/%@/picture",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"]];
     NSURL *url = [NSURL URLWithString:urlStr];
     cell.myImageView.imageURL = url;
     
@@ -418,8 +428,11 @@ BOOL refreshData;
     UIGraphicsEndImageContext();
     return newImage;
 }
+
 - (void)PESatitApiManager:(id)sender getCommentObjectIdResponse:(NSDictionary *)response {
-    NSLog(@"%@",response);
+    
+    //NSLog(@"%@",response);
+    
     if (!refreshData) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
             //[self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
@@ -442,9 +455,11 @@ BOOL refreshData;
     
     [self reloadData:YES];
 }
+
 - (void)PESatitApiManager:(id)sender getCommentObjectIdErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
+
 - (void)reloadData:(BOOL)animated
 {
     [self.tableView reloadData];
@@ -459,6 +474,7 @@ BOOL refreshData;
         [[self.tableView layer] addAnimation:animation forKey:@"UITableViewReloadDataAnimationKey"];
     }
 }
+
 - (void)PESatitApiManager:(id)sender getNewsLikeCommentsResponse:(NSDictionary *)response {
     NSString *likeStr = [[NSString alloc] initWithFormat:@"%d Likes",[[[response objectForKey:@"like"] objectForKey:@"length"] intValue]];
     self.likeLabel.text = likeStr;
@@ -468,6 +484,7 @@ BOOL refreshData;
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"LikeBottonOnIp5"] forState:UIControlStateNormal];
     }
 }
+
 - (void)PESatitApiManager:(id)sender getNewsLikeCommentsErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
@@ -477,8 +494,8 @@ BOOL refreshData;
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
         // 'Back' button was pressed.  We know this is true because self is no longer
         // in the navigation stack.
-        if([self.delegate respondsToSelector:@selector(PENewsDetailViewControllerBack)]){
-            [self.delegate PENewsDetailViewControllerBack];
+        if([self.delegate respondsToSelector:@selector(PFUpdateDetailViewControllerBack)]){
+            [self.delegate PFUpdateDetailViewControllerBack];
         }
     }
     
@@ -489,8 +506,8 @@ BOOL refreshData;
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
         
-        self.loginView = [[PELoginViewController alloc] init];
-        [self.view addSubview:self.loginView.view];
+//        self.loginView = [[PELoginViewController alloc] init];
+//        [self.view addSubview:self.loginView.view];
         
     } else {
         [self.likeButton setHighlighted:YES];
@@ -537,8 +554,8 @@ BOOL refreshData;
     
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
-        self.loginView = [[PELoginViewController alloc] init];
-        [self.view addSubview:self.loginView.view];
+//        self.loginView = [[PELoginViewController alloc] init];
+//        [self.view addSubview:self.loginView.view];
 
     } else {
         NSString *urlString = [[NSString alloc]init];
@@ -553,6 +570,7 @@ BOOL refreshData;
         }
     }
 }
+
 - (void)PESatitApiManager:(id)sender checkLikeObjectResponse:(NSDictionary *)response {
     if ( [[[response objectForKey:@"like"] objectForKey:@"is_liked"] intValue] == 1 ) {
         [self.satitApi unlikeObject:[self.obj objectForKey:@"id"]];
@@ -567,6 +585,7 @@ BOOL refreshData;
     }
     [self.likeButton setHighlighted:NO];
 }
+
 - (void)PESatitApiManager:(id)sender checkLikeObjectErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
@@ -610,6 +629,7 @@ BOOL refreshData;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
 }
+
 - (void)PESatitApiManager:(id)sender CommentObjectIdErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
@@ -617,7 +637,7 @@ BOOL refreshData;
 -(void)singleTapping:(UIGestureRecognizer *)recognizer
 {
     NSString *picStr = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
-    [self.delegate PENewsDetailViewController:self viewPicture:picStr];
+    [self.delegate PFUpdateDetailViewController:self viewPicture:picStr];
     
     [self.textComment resignFirstResponder];
     
@@ -661,7 +681,7 @@ BOOL refreshData;
 }
 
 - (void)DidUserId:(NSString *)userId {
-    PESeeAccountViewController *seeAct = [[PESeeAccountViewController alloc] initWithNibName:@"PESeeAccountViewController_Wide" bundle:nil];
+    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
     seeAct.delegate = self;
     seeAct.userId = userId;
     [self.navigationController  pushViewController:seeAct animated:YES];

@@ -52,7 +52,7 @@
                 <outlet property="createdText" destination="lKN-sz-iQu" id="YPr-1d-ced"/>
                 <outlet property="detailView" destination="FJr-2c-AVM" id="uwL-g7-aZc"/>
                 <outlet property="messageText" destination="Ofg-9m-DoC" id="56h-E7-TZ4"/>
-                <outlet property="thumbnails" destination="FDG-VX-dqa" id="Q0k-gM-33i"/>
+                <outlet property="thumbnails" destination="FDG-VX-dqa" id="t2o-As-sik"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -25,6 +25,7 @@ BOOL newMedia;
     self.satitApi = [[PESatitApiManager alloc] init];
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
+        NSLog(@"No Login");
     } else {
         NSLog(@"Login");
     }
@@ -51,6 +52,7 @@ BOOL newMedia;
     }
     
     update.delegate = self;
+    showcase.delegate = self;
     activity.delegate = self;
     contact.delegate = self;
     

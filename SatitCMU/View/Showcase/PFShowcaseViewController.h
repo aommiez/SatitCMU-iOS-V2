@@ -11,8 +11,18 @@
 #import "ShowCaseCell.h"
 #import "PESatitApiManager.h"
 
+#import "PFGalleryViewController.h"
+
+@protocol PFShowcaseViewControllerDelegate <NSObject>
+
+- (void)HideTabbar;
+- (void)ShowTabbar;
+
+@end
+
 @interface PFShowcaseViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) PESatitApiManager *satitApi;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic) IBOutlet CRGradientNavigationBar *navBar;

@@ -628,16 +628,16 @@ BOOL refreshData;
     PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
     seeAct.delegate = self;
     seeAct.userId = userId;
-    [self.navigationController pushViewController:seeAct animated:YES];
+    [self.navigationController  pushViewController:seeAct animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
     
-//    if ([self.navigationController.visibleViewController isKindOfClass:[PFSeeAccountViewController class]]) {
-//        
-//    } else {
+    if ([self.navigationController.visibleViewController isKindOfClass:[PFSeeAccountViewController class]]) {
+        
+    } else {
         if (self.navigationController.visibleViewController != self) {
             if([self.delegate respondsToSelector:@selector(PFActivityDetailViewControllerBack)]){
                 [self.delegate PFActivityDetailViewControllerBack];
@@ -645,7 +645,7 @@ BOOL refreshData;
         } else {
             
         }
-//    }
+    }
 }
 
 - (void)PFSeeAccountViewController:(id)sender viewPicture:(NSString *)link {

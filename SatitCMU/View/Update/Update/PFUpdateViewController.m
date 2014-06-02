@@ -112,7 +112,7 @@ BOOL refreshDataNe;
     
     self.blur = [[UIERealTimeBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(self.blur.frame.origin.x, self.blur.frame.origin.y+64, self.blur.frame.size.width, self.blur.frame.size.height-64)];
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/webview/filter?type=activity&ios_token=%@",[self.satitApi getTokenGuest]];
+    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/webview/filter?type=update&ios_token=%@",[self.satitApi getTokenGuest]];
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
@@ -146,6 +146,7 @@ BOOL refreshDataNe;
 
 - (void)PESatitApiManager:(id)sender feedResponse:(NSDictionary *)response {
     
+    //NSLog(@"%@",response);
     if (!refreshDataNe) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
             [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
@@ -235,7 +236,7 @@ BOOL refreshDataNe;
                 cell.comment.text = commentStr;
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                //[self.delegate PESatitApiManager:self getNewsLikeCommentsErrorResponse:[error localizedDescription]];
+
             }];
             
             cell.thumbnails.layer.masksToBounds = YES;
@@ -284,14 +285,12 @@ BOOL refreshDataNe;
             
             self.manager = [AFHTTPRequestOperationManager manager];
             [self.manager GET:urlStrAc parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                //NSLog(@"%@",responseObject);
-                //[self.delegate PESatitApiManager:self getNewsLikeCommentsResponse:responseObject];
                 
                 NSString *commentStr = [[NSString alloc] initWithFormat:@"%d Comments",[[[responseObject objectForKey:@"comment"] objectForKey:@"length"] intValue]];
                 cell.comment.text = commentStr;
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                //[self.delegate PESatitApiManager:self getNewsLikeCommentsErrorResponse:[error localizedDescription]];
+
             }];
             
             cell.createdText.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"activity"] objectForKey:@"created_text"];
@@ -308,7 +307,7 @@ BOOL refreshDataNe;
             
             UpdateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UpdateCell"];
             if(cell == nil) {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ActivityCell" owner:self options:nil];
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ActivityNoCommentCell" owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
             NSString *urlStr = [[NSString alloc] init];
@@ -327,7 +326,7 @@ BOOL refreshDataNe;
                 cell.comment.text = commentStr;
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                //[self.delegate PESatitApiManager:self getNewsLikeCommentsErrorResponse:[error localizedDescription]];
+                
             }];
             
             cell.thumbnails.layer.masksToBounds = YES;
@@ -368,8 +367,55 @@ BOOL refreshDataNe;
         return cell;
         
     }
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate HideTabbar];
+    
+    if ([[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"activity"]) {
+        
+        PFActivityDetailViewController *actDetailViewController = [[PFActivityDetailViewController alloc] init];
+        
+        if (IS_WIDESCREEN){
+            actDetailViewController = [[PFActivityDetailViewController alloc] initWithNibName:@"PFActivityDetailViewController_Wide" bundle:nil];
+        }else{
+            actDetailViewController = [[PFActivityDetailViewController alloc] initWithNibName:@"PFActivityDetailViewController"bundle:nil];
+        }
+        
+        actDetailViewController.obj = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"activity"];
+        actDetailViewController.delegate = self;
+        [self.navController pushViewController:actDetailViewController animated:YES];
+        
+    } else if ([[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"gallery"]) {
+        
+        PFGalleryViewController *gallery = [[PFGalleryViewController alloc] init];
+        
+        if (IS_WIDESCREEN){
+            gallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+        }else{
+            gallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController"bundle:nil];
+        }
+        
+        gallery.delegate = self;
+        [self.navController pushViewController:gallery animated:YES];
+        
+    } else {
+        
+        PFUpdateDetailViewController *updateDeatail = [[PFUpdateDetailViewController alloc] init];
+        
+        if (IS_WIDESCREEN){
+            updateDeatail = [[PFUpdateDetailViewController alloc] initWithNibName:@"PFUpdateDetailViewController_Wide" bundle:nil];
+        }else{
+            updateDeatail = [[PFUpdateDetailViewController alloc] initWithNibName:@"PFUpdateDetailViewController"bundle:nil];
+        }
+        
+        updateDeatail.obj = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"news"];
+        updateDeatail.delegate = self;
+        [self.navController pushViewController:updateDeatail animated:YES];
+        
+    }
 }
 
 #pragma mark -
@@ -448,15 +494,35 @@ BOOL refreshDataNe;
     }
 }
 
-- (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link{
-    [self.delegate PFImageViewController:self viewPicture:link];
-}
-
 - (void)PFAccountViewControllerBack {
     [self.delegate ShowTabbar];
 }
 
 - (void)PFNotifyViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link{
+    [self.delegate PFImageViewController:self viewPicture:link];
+}
+
+- (void)PFUpdateDetailViewController:(id)sender viewPicture:(NSString *)link{
+    [self.delegate PFImageViewController:self viewPicture:link];
+}
+
+- (void)PFUpdateDetailViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void)PFActivityDetailViewControllerPhoto:(NSString *)link{
+    [self.delegate PFImageViewController:self viewPicture:link];
+}
+
+- (void)PFActivityDetailViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void)PFGalleryViewControllerBack {
     [self.delegate ShowTabbar];
 }
 

@@ -42,6 +42,8 @@
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *act;
 @property (retain, nonatomic) IBOutlet UILabel *loadLabel;
 
+@property (retain, nonatomic) IBOutlet UIView *headerView;
+
 - (IBAction)filterTapped:(id)sender;
 
 @end

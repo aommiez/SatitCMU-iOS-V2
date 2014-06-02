@@ -80,8 +80,7 @@ BOOL refreshDataAc;
     self.mtext.text = dateStringMFull;
     [self.satitApi getActivitiesByM:dateStringM year:dateStringY];
     
-    UIView *hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    self.tableView.tableHeaderView = hv;
+    self.tableView.tableHeaderView = self.headerView;
     
     UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 54)];
     self.tableView.tableFooterView = fv;
@@ -104,7 +103,7 @@ BOOL refreshDataAc;
     
     self.blur = [[UIERealTimeBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(self.blur.frame.origin.x, self.blur.frame.origin.y+64, self.blur.frame.size.width, self.blur.frame.size.height-64)];
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://61.19.147.72/satit/api/webview/filter?type=activity&ios_token=%@",[self.satitApi getTokenGuest]];
+    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/webview/filter?type=activity&ios_token=%@",[self.satitApi getTokenGuest]];
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
@@ -230,14 +229,12 @@ BOOL refreshDataAc;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	//NSLog(@"%f",scrollView.contentOffset.y);
-    self.loadLabel.text = @"";
-    self.act.alpha = 0;
+	//[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
     
 }
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if ( scrollView.contentOffset.y < 0.0f ) {
-        //NSLog(@"refreshData < 0.0f");
+
         [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterShortStyle];
@@ -246,12 +243,10 @@ BOOL refreshDataAc;
         self.act.alpha =1;
     }
 }
-
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    //NSLog(@"%f",scrollView.contentOffset.y);
+
     if (scrollView.contentOffset.y < -60.0f ) {
         refreshDataAc = YES;
-        NSLog(@"refreshData = YES");
         
         self.satitApi = [[PESatitApiManager alloc] init];
         self.satitApi.delegate = self;
@@ -261,39 +256,45 @@ BOOL refreshDataAc;
         self.act.alpha = 0;
     }
 }
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
     if ( scrollView.contentOffset.y < -100.0f ) {
-        //NSLog(@"refreshData < -100.0f");
+
         [UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
+        self.tableView.frame = CGRectMake(0, 60, 320, self.tableView.frame.size.height);
 		[UIView commitAnimations];
+        [self performSelector:@selector(resizeTable) withObject:nil afterDelay:2];
     } else {
         self.loadLabel.text = @"";
         self.act.alpha = 0;
     }
 }
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     float offset = (scrollView.contentOffset.y - (scrollView.contentSize.height - scrollView.frame.size.height));
-    //NSLog(@"%f",offset);
     if (offset >= 0 && offset <= 5) {
         if (!noDataAc) {
             refreshDataAc = NO;
-            //NSLog(@"refreshData = NO");
+
             self.satitApi = [[PESatitApiManager alloc] init];
             self.satitApi.delegate = self;
+            
         }
     }
+}
+- (void)resizeTable {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    self.tableView.frame = CGRectMake(0, 0, 320, self.tableView.frame.size.height);
+    [UIView commitAnimations];
 }
 
 - (void)reloadData:(BOOL)animated
 {
     [self.tableView reloadData];
     if (!noDataAc){
-        self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height-270);
+        self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
     } else {
         self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
     }

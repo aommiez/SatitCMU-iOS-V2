@@ -9,19 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
 #import "PESatitApiManager.h"
-#import "PFNewsCommentCell.h"
-#import "PELoginViewController.h"
 #import "UILabel+UILabelDynamicHeight.h"
 #import <Social/Social.h>
 
-@protocol PENewsDetailViewControllerDelegate <NSObject>
+// #import "PFNewsCommentCell.h"
+#import "PFSeeAccountViewController.h"
 
-- (void)PENewsDetailViewControllerBack;
-- (void)PENewsDetailViewController:(id)sender viewPicture:(NSString *)link;
+@protocol PFUpdateDetailViewControllerDelegate <NSObject>
+
+- (void)PFUpdateDetailViewControllerBack;
+- (void)PFUpdateDetailViewController:(id)sender viewPicture:(NSString *)link;
 
 @end
 
-@interface PENewsDetailViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
+@interface PFUpdateDetailViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 
 @property (strong, nonatomic) PESatitApiManager *satitApi;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
@@ -44,13 +45,14 @@
 @property (strong, nonatomic) IBOutlet UIView *textCommentView;
 @property (weak, nonatomic) IBOutlet UIButton *postBut;
 @property (weak, nonatomic) IBOutlet UITextView *textComment;
-- (IBAction)postCommentTapped:(id)sender;
-@property (assign, nonatomic) id<PENewsDetailViewControllerDelegate> delegate;
+
+@property (assign, nonatomic) id <PFUpdateDetailViewControllerDelegate> delegate;
 
 - (IBAction)likeTapped:(id)sender;
 - (IBAction)commentTapped:(id)sender;
 - (IBAction)shareTapped:(id)sender;
+- (IBAction)postCommentTapped:(id)sender;
 
-@property (strong, nonatomic) PELoginViewController *loginView;
+// @property (strong, nonatomic) PELoginViewController *loginView;
 
 @end
