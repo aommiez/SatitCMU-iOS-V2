@@ -504,13 +504,13 @@ BOOL refreshDataNe;
     }
 }
 
-//- (void)PENotifyViewController:(id)sender{
-//    [self.delegate HideTabbar];
-//    
-//    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
-//    notifyView.delegate = self;
-//    [self.navController pushViewController:notifyView animated:YES];
-//}
+- (void)PFNotifyViewController:(id)sender{
+    [self.delegate HideTabbar];
+    
+    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+    notifyView.delegate = self;
+    [self.navController pushViewController:notifyView animated:YES];
+}
 
 - (void)PFAccountViewControllerBack {
     [self.delegate ShowTabbar];

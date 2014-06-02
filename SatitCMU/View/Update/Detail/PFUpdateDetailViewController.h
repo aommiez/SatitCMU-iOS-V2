@@ -12,8 +12,9 @@
 #import "UILabel+UILabelDynamicHeight.h"
 #import <Social/Social.h>
 
-// #import "PFNewsCommentCell.h"
+#import "PFNewsCommentCell.h"
 #import "PFSeeAccountViewController.h"
+#import "PFLoginViewController.h"
 
 @protocol PFUpdateDetailViewControllerDelegate <NSObject>
 
@@ -47,12 +48,11 @@
 @property (weak, nonatomic) IBOutlet UITextView *textComment;
 
 @property (assign, nonatomic) id <PFUpdateDetailViewControllerDelegate> delegate;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 
 - (IBAction)likeTapped:(id)sender;
 - (IBAction)commentTapped:(id)sender;
 - (IBAction)shareTapped:(id)sender;
 - (IBAction)postCommentTapped:(id)sender;
-
-// @property (strong, nonatomic) PELoginViewController *loginView;
 
 @end

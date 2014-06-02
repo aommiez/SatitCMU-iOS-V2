@@ -9,6 +9,7 @@
 #import "PFUpdateDetailViewController.h"
 #import "UIView+MTAnimation.h"
 #include "PFAppDelegate.h"
+
 #define FONT_SIZE 15.0f
 #define CELL_CONTENT_WIDTH 280.0f
 #define CELL_CONTENT_MARGIN 4.0f
@@ -199,7 +200,7 @@ BOOL refreshData;
                           delay:0.1  /* starts the animation after 3 seconds */
                         options:UIViewAnimationCurveEaseOut
                      animations:^ {
-                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.tableView.frame.size.height);
+                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
                          if ([self.arrObj count] > 0)
                              [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
                      }
@@ -211,8 +212,8 @@ BOOL refreshData;
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
         
-//        self.loginView = [[PELoginViewController alloc] init];
-//        [self.view addSubview:self.loginView.view];
+        self.loginView = [[PFLoginViewController alloc] init];
+        [self.view addSubview:self.loginView.view];
 
     } else {
         if (![self.textComment.text isEqualToString:@""]) {
@@ -291,13 +292,12 @@ BOOL refreshData;
     [button setContentMode:UIViewContentModeScaleAspectFit];
     [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"linePrev.png"] forState:UIControlStateNormal];
-    //headerView.backgroundColor = [UIColor redColor];
+
     [headerView addSubview:button];
     [headerView addSubview:imgViewPrev];
     [headerView addSubview:imgViewLine];
     return headerView;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *str = [[NSString alloc] init];
@@ -317,6 +317,7 @@ BOOL refreshData;
     int heightLable = 20*lineValue;
     return heightLable+40;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -350,8 +351,7 @@ BOOL refreshData;
     cell.imgBut.tag = [[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"] intValue];
     cell.commentLabel.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"message"];
     cell.nameLabel.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"username"];
-    //NSLog(@"%@",[[[self.commentDict objectForKey:@"data"] objectAtIndex:indexPath.row] objectForKey:@"from"]);
-    //cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
+    
     NSString *urlStr = [[NSString alloc] initWithFormat:@"http://satitcmu-api.pla2app.com/user/%@/picture",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"from"] objectForKey:@"id"]];
     NSURL *url = [NSURL URLWithString:urlStr];
     cell.myImageView.imageURL = url;
@@ -506,8 +506,8 @@ BOOL refreshData;
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
         
-//        self.loginView = [[PELoginViewController alloc] init];
-//        [self.view addSubview:self.loginView.view];
+        self.loginView = [[PFLoginViewController alloc] init];
+        [self.view addSubview:self.loginView.view];
         
     } else {
         [self.likeButton setHighlighted:YES];
@@ -554,8 +554,8 @@ BOOL refreshData;
     
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
         [self.satitApi setTokenForGuest];
-//        self.loginView = [[PELoginViewController alloc] init];
-//        [self.view addSubview:self.loginView.view];
+        self.loginView = [[PFLoginViewController alloc] init];
+        [self.view addSubview:self.loginView.view];
 
     } else {
         NSString *urlString = [[NSString alloc]init];
