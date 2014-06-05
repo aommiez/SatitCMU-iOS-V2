@@ -245,6 +245,7 @@
 		EA31D8D8193878F4000DD23B /* PFWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA31D8D6193878F4000DD23B /* PFWebViewViewController.m */; };
 		EA4458D319399A980022CBFC /* Powered.png in Resources */ = {isa = PBXBuildFile; fileRef = EA4458D119399A980022CBFC /* Powered.png */; };
 		EA4458D419399A980022CBFC /* Powered@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA4458D219399A980022CBFC /* Powered@2x.png */; };
+		EA4DCF2419406318002F8013 /* PFMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4DCF2319406318002F8013 /* PFMapViewController.xib */; };
 		EA74C56E1939E1E7004A4B09 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74C56C1939E1E7004A4B09 /* ActivityCell.m */; };
 		EA74C56F1939E1E7004A4B09 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA74C56D1939E1E7004A4B09 /* ActivityCell.xib */; };
 		EA7FCB1319388D9B00AB01A6 /* icon_reload.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7FCB1119388D9B00AB01A6 /* icon_reload.png */; };
@@ -291,6 +292,18 @@
 		EAD3C2AC193B0FE6008C1562 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AB193B0FE6008C1562 /* libz.dylib */; };
 		EAD3C2AE193B0FF0008C1562 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */; };
 		EAD3C2B0193B108C008C1562 /* dyci.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3C2AF193B108C008C1562 /* dyci.framework */; };
+		EAD9748D19406374004425D9 /* PFWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9748C19406374004425D9 /* PFWebViewViewController.xib */; };
+		EAD9748F19406386004425D9 /* PFContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9748E19406386004425D9 /* PFContactViewController.xib */; };
+		EAD9749319406441004425D9 /* PFActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9749219406441004425D9 /* PFActivityViewController.xib */; };
+		EAD9749519406479004425D9 /* PFActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9749419406479004425D9 /* PFActivityDetailViewController.xib */; };
+		EAD97497194067E4004425D9 /* PFShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD97496194067E4004425D9 /* PFShowcaseViewController.xib */; };
+		EAD974991940681E004425D9 /* PFGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD974981940681E004425D9 /* PFGalleryViewController.xib */; };
+		EAD9749B1940688B004425D9 /* PFNotifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9749A1940688B004425D9 /* PFNotifyViewController.xib */; };
+		EAD9749D194068AA004425D9 /* PFAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9749C194068AA004425D9 /* PFAccountViewController.xib */; };
+		EAD9749F194068CD004425D9 /* PFEditAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD9749E194068CD004425D9 /* PFEditAccountViewController.xib */; };
+		EAD974A1194068ED004425D9 /* PFSeeAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD974A0194068ED004425D9 /* PFSeeAccountViewController.xib */; };
+		EAD974A319406969004425D9 /* PFUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD974A219406969004425D9 /* PFUpdateViewController.xib */; };
+		EAD974A519406AD5004425D9 /* PFUpdateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD974A419406AD5004425D9 /* PFUpdateDetailViewController.xib */; };
 		EAF69C2D1938DE85004C94C8 /* PFShowcaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF69C2B1938DE85004C94C8 /* PFShowcaseViewController.m */; };
 		EAF69C2E1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF69C2C1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib */; };
 		EAF69C321938DFC9004C94C8 /* PFActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF69C301938DFC9004C94C8 /* PFActivityViewController.m */; };
@@ -727,6 +740,7 @@
 		EA31D8D6193878F4000DD23B /* PFWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFWebViewViewController.m; path = View/Contact/Web/PFWebViewViewController.m; sourceTree = SOURCE_ROOT; };
 		EA4458D119399A980022CBFC /* Powered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Powered.png; sourceTree = "<group>"; };
 		EA4458D219399A980022CBFC /* Powered@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Powered@2x.png"; sourceTree = "<group>"; };
+		EA4DCF2319406318002F8013 /* PFMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMapViewController.xib; path = View/Contact/Map/PFMapViewController.xib; sourceTree = SOURCE_ROOT; };
 		EA74C56B1939E1E7004A4B09 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = View/Activity/ActivityCell.h; sourceTree = SOURCE_ROOT; };
 		EA74C56C1939E1E7004A4B09 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = View/Activity/ActivityCell.m; sourceTree = SOURCE_ROOT; };
 		EA74C56D1939E1E7004A4B09 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityCell.xib; path = View/Activity/ActivityCell.xib; sourceTree = SOURCE_ROOT; };
@@ -778,6 +792,18 @@
 		EAD3C2AB193B0FE6008C1562 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		EAD3C2AF193B108C008C1562 /* dyci.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = dyci.framework; path = ../Frameworks/dyci.framework; sourceTree = "<group>"; };
+		EAD9748C19406374004425D9 /* PFWebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFWebViewViewController.xib; path = View/Contact/Web/PFWebViewViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD9748E19406386004425D9 /* PFContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFContactViewController.xib; path = View/Contact/Contact/PFContactViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD9749219406441004425D9 /* PFActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFActivityViewController.xib; path = View/Activity/PFActivityViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD9749419406479004425D9 /* PFActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFActivityDetailViewController.xib; sourceTree = "<group>"; };
+		EAD97496194067E4004425D9 /* PFShowcaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFShowcaseViewController.xib; path = View/Showcase/PFShowcaseViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD974981940681E004425D9 /* PFGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFGalleryViewController.xib; sourceTree = "<group>"; };
+		EAD9749A1940688B004425D9 /* PFNotifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFNotifyViewController.xib; sourceTree = "<group>"; };
+		EAD9749C194068AA004425D9 /* PFAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAccountViewController.xib; path = View/Update/Account/PFAccountViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD9749E194068CD004425D9 /* PFEditAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFEditAccountViewController.xib; path = View/Update/Account/PFEditAccountViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD974A0194068ED004425D9 /* PFSeeAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFSeeAccountViewController.xib; path = View/Update/Account/PFSeeAccountViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD974A219406969004425D9 /* PFUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFUpdateViewController.xib; path = View/Update/Update/PFUpdateViewController.xib; sourceTree = SOURCE_ROOT; };
+		EAD974A419406AD5004425D9 /* PFUpdateDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFUpdateDetailViewController.xib; sourceTree = "<group>"; };
 		EAF69C2A1938DE85004C94C8 /* PFShowcaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFShowcaseViewController.h; path = View/Showcase/PFShowcaseViewController.h; sourceTree = SOURCE_ROOT; };
 		EAF69C2B1938DE85004C94C8 /* PFShowcaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFShowcaseViewController.m; path = View/Showcase/PFShowcaseViewController.m; sourceTree = SOURCE_ROOT; };
 		EAF69C2C1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFShowcaseViewController_Wide.xib; path = View/Showcase/PFShowcaseViewController_Wide.xib; sourceTree = SOURCE_ROOT; };
@@ -919,6 +945,7 @@
 				EA0869D81938CFEB0064D2DD /* PFContactViewController.h */,
 				EA0869D91938CFEB0064D2DD /* PFContactViewController.m */,
 				EA0869D71938CFEB0064D2DD /* PFContactViewController_Wide.xib */,
+				EAD9748E19406386004425D9 /* PFContactViewController.xib */,
 				EA0869D41938CFEB0064D2DD /* ContactLabelDescCell.h */,
 				EA0869D51938CFEB0064D2DD /* ContactLabelDescCell.m */,
 				EA0869D61938CFEB0064D2DD /* ContactLabelDescCell.xib */,
@@ -1001,6 +1028,7 @@
 				EAF69C2A1938DE85004C94C8 /* PFShowcaseViewController.h */,
 				EAF69C2B1938DE85004C94C8 /* PFShowcaseViewController.m */,
 				EAF69C2C1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib */,
+				EAD97496194067E4004425D9 /* PFShowcaseViewController.xib */,
 				EA0566B419397BEE00951F80 /* ShowCaseCell.h */,
 				EA0566B519397BEE00951F80 /* ShowCaseCell.m */,
 				EA0566B619397BEE00951F80 /* ShowCaseCell.xib */,
@@ -1017,6 +1045,7 @@
 				EAF69C2F1938DFC9004C94C8 /* PFActivityViewController.h */,
 				EAF69C301938DFC9004C94C8 /* PFActivityViewController.m */,
 				EAF69C311938DFC9004C94C8 /* PFActivityViewController_Wide.xib */,
+				EAD9749219406441004425D9 /* PFActivityViewController.xib */,
 				EA74C56B1939E1E7004A4B09 /* ActivityCell.h */,
 				EA74C56C1939E1E7004A4B09 /* ActivityCell.m */,
 				EA74C56D1939E1E7004A4B09 /* ActivityCell.xib */,
@@ -1041,6 +1070,7 @@
 				EA0F569B19384BBF0015DCEF /* PFUpdateViewController.h */,
 				EA0F569C19384BBF0015DCEF /* PFUpdateViewController.m */,
 				EA0F569D19384BBF0015DCEF /* PFUpdateViewController_Wide.xib */,
+				EAD974A219406969004425D9 /* PFUpdateViewController.xib */,
 				EA11A6D6193B2A7600DEF3A5 /* UpdateCell.h */,
 				EA11A6D7193B2A7600DEF3A5 /* UpdateCell.m */,
 				EA11A6D8193B2A7600DEF3A5 /* UpdateCell.xib */,
@@ -1079,12 +1109,15 @@
 				EAAEE2F9193B456500041BCA /* PFAccountViewController.h */,
 				EAAEE2FA193B456500041BCA /* PFAccountViewController.m */,
 				EAAEE2F8193B456500041BCA /* PFAccountViewController_Wide.xib */,
+				EAD9749C194068AA004425D9 /* PFAccountViewController.xib */,
 				EAAEE2FC193B456500041BCA /* PFEditAccountViewController.h */,
 				EAAEE2FD193B456500041BCA /* PFEditAccountViewController.m */,
 				EAAEE2FB193B456500041BCA /* PFEditAccountViewController_Wide.xib */,
+				EAD9749E194068CD004425D9 /* PFEditAccountViewController.xib */,
 				EAAEE2FF193B456500041BCA /* PFSeeAccountViewController.h */,
 				EAAEE300193B456500041BCA /* PFSeeAccountViewController.m */,
 				EAAEE2FE193B456500041BCA /* PFSeeAccountViewController_Wide.xib */,
+				EAD974A0194068ED004425D9 /* PFSeeAccountViewController.xib */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -1095,6 +1128,7 @@
 				EA0869CF1938CD490064D2DD /* PFMapViewController.h */,
 				EA0869D01938CD490064D2DD /* PFMapViewController.m */,
 				EA0869CE1938CD490064D2DD /* PFMapViewController_Wide.xib */,
+				EA4DCF2319406318002F8013 /* PFMapViewController.xib */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -1105,6 +1139,7 @@
 				EA31D8D5193878F4000DD23B /* PFWebViewViewController.h */,
 				EA31D8D6193878F4000DD23B /* PFWebViewViewController.m */,
 				EA31D8D4193878F4000DD23B /* PFWebViewViewController_Wide.xib */,
+				EAD9748C19406374004425D9 /* PFWebViewViewController.xib */,
 			);
 			name = Web;
 			sourceTree = "<group>";
@@ -1613,6 +1648,7 @@
 				EA11A6E4193B311700DEF3A5 /* PFNotifyViewController.h */,
 				EA11A6E5193B311700DEF3A5 /* PFNotifyViewController.m */,
 				EA11A6E6193B311700DEF3A5 /* PFNotifyViewController_Wide.xib */,
+				EAD9749A1940688B004425D9 /* PFNotifyViewController.xib */,
 				EA11A6E1193B311700DEF3A5 /* PFNotificationCell.h */,
 				EA11A6E2193B311700DEF3A5 /* PFNotificationCell.m */,
 				EA11A6E3193B311700DEF3A5 /* PFNotificationCell.xib */,
@@ -1662,6 +1698,7 @@
 				EA0589A3193F598F005A0CE4 /* PFGalleryViewController.h */,
 				EA0589A4193F598F005A0CE4 /* PFGalleryViewController.m */,
 				EA0589A5193F598F005A0CE4 /* PFGalleryViewController_Wide.xib */,
+				EAD974981940681E004425D9 /* PFGalleryViewController.xib */,
 				EA0589A0193F598F005A0CE4 /* MyCell.h */,
 				EA0589A1193F598F005A0CE4 /* MyCell.m */,
 				EA0589A2193F598F005A0CE4 /* MyCell.xib */,
@@ -1721,6 +1758,7 @@
 				EAC2ACF8193C43250005DD93 /* PFUpdateDetailViewController.h */,
 				EAC2ACF9193C43250005DD93 /* PFUpdateDetailViewController.m */,
 				EAC2ACFA193C43250005DD93 /* PFUpdateDetailViewController_Wide.xib */,
+				EAD974A419406AD5004425D9 /* PFUpdateDetailViewController.xib */,
 			);
 			name = Detail;
 			path = View/Update/Detail;
@@ -1745,6 +1783,7 @@
 				EAFB5FF01939D40E002D15AD /* PFActivityDetailViewController.h */,
 				EAFB5FF11939D40E002D15AD /* PFActivityDetailViewController.m */,
 				EAFB5FF21939D40E002D15AD /* PFActivityDetailViewController_Wide.xib */,
+				EAD9749419406479004425D9 /* PFActivityDetailViewController.xib */,
 				EAFB5FF31939D40E002D15AD /* PFNewsCommentCell.h */,
 				EAFB5FF41939D40E002D15AD /* PFNewsCommentCell.m */,
 				EAFB5FEF1939D40E002D15AD /* NewsCommnetCell.xib */,
@@ -1840,8 +1879,10 @@
 				EA1B62061939BC0D0079FBEB /* icon_update_offIp5@2x.png in Resources */,
 				EA086A231938D6E40064D2DD /* PFLoginViewController.xib in Resources */,
 				EAAEE303193B456500041BCA /* FootCreateAccIp5@2x.png in Resources */,
+				EAD974A519406AD5004425D9 /* PFUpdateDetailViewController.xib in Resources */,
 				EAB7860919386A8B0067BE3D /* Icon_Youtube.png in Resources */,
 				EAB117BC1939C9250042D194 /* Calendar_icon@2x.png in Resources */,
+				EAD9749D194068AA004425D9 /* PFAccountViewController.xib in Resources */,
 				EA1B61FF1939BC0D0079FBEB /* icon_update_onIp4.png in Resources */,
 				EA968D62193C1F7F007693AE /* CoreData.plist in Resources */,
 				EA11A6CA193B236E00DEF3A5 /* LikeBottonOnIp5@2x.png in Resources */,
@@ -1849,7 +1890,9 @@
 				EA1B62001939BC0D0079FBEB /* icon_activity_offIp5@2x.png in Resources */,
 				EA11A6EA193B311700DEF3A5 /* PFNotifyViewController_Wide.xib in Resources */,
 				EAC2ACFC193C43250005DD93 /* PFUpdateDetailViewController_Wide.xib in Resources */,
+				EA4DCF2419406318002F8013 /* PFMapViewController.xib in Resources */,
 				EAAEE301193B456500041BCA /* BodyCreateAccIp5@2x.png in Resources */,
+				EAD974A1194068ED004425D9 /* PFSeeAccountViewController.xib in Resources */,
 				EA0869DE1938CFEB0064D2DD /* PFContactViewController_Wide.xib in Resources */,
 				EA086A1E1938D6E40064D2DD /* Login_Button.png in Resources */,
 				EAF69C331938DFC9004C94C8 /* PFActivityViewController_Wide.xib in Resources */,
@@ -1871,6 +1914,8 @@
 				EA11A6CC193B236E00DEF3A5 /* NotBoxNoReadIp4.png in Resources */,
 				EA0869ED1938D3290064D2DD /* BodyCommentBoxIp5@2x.png in Resources */,
 				EA7FCB1419388D9B00AB01A6 /* icon_reload@2x.png in Resources */,
+				EAD974A319406969004425D9 /* PFUpdateViewController.xib in Resources */,
+				EAD9748D19406374004425D9 /* PFWebViewViewController.xib in Resources */,
 				EA11A6DB193B2A7600DEF3A5 /* ActivityNoPicCell.xib in Resources */,
 				EA11A6CE193B236E00DEF3A5 /* NotBoxNoReadIp5@2x.png in Resources */,
 				EA1B620C1939C8780079FBEB /* Setting_icon@2x.png in Resources */,
@@ -1888,6 +1933,7 @@
 				EA0F5867193861B20015DCEF /* TapkuLibrary.bundle in Resources */,
 				EAAEE305193B456500041BCA /* PasswordIcon@2x.png in Resources */,
 				EA0869D11938CD490064D2DD /* PFMapViewController_Wide.xib in Resources */,
+				EAD9749F194068CD004425D9 /* PFEditAccountViewController.xib in Resources */,
 				EA31D8D7193878F4000DD23B /* PFWebViewViewController_Wide.xib in Resources */,
 				EA4458D419399A980022CBFC /* Powered@2x.png in Resources */,
 				EA1B61FD1939BC0D0079FBEB /* icon_showcase_onIp4.png in Resources */,
@@ -1905,11 +1951,15 @@
 				EA11A6DC193B2A7600DEF3A5 /* GalleryNoCommentCell.xib in Resources */,
 				EA11A6DF193B2A7600DEF3A5 /* UpdateNoPicCell.xib in Resources */,
 				EA086A1F1938D6E40064D2DD /* Satit_Logo.png in Resources */,
+				EAD9748F19406386004425D9 /* PFContactViewController.xib in Resources */,
 				EAF69C2E1938DE85004C94C8 /* PFShowcaseViewController_Wide.xib in Resources */,
 				EA1B61FC1939BC0D0079FBEB /* icon_showcase_offIp4.png in Resources */,
 				EAB785FE19386A8B0067BE3D /* Chapter_01.png in Resources */,
 				EA11A6DE193B2A7600DEF3A5 /* UpdateCell.xib in Resources */,
 				EA0869F21938D3290064D2DD /* HeadDetailDZIp5@2x.png in Resources */,
+				EAD97497194067E4004425D9 /* PFShowcaseViewController.xib in Resources */,
+				EAD9749B1940688B004425D9 /* PFNotifyViewController.xib in Resources */,
+				EAD9749319406441004425D9 /* PFActivityViewController.xib in Resources */,
 				EA11A6CD193B236E00DEF3A5 /* NotBoxNoReadIp4@2x.png in Resources */,
 				EA0869F51938D3290064D2DD /* PostBottonIp5@2x.png in Resources */,
 				EA0589A9193F598F005A0CE4 /* PFGalleryViewController_Wide.xib in Resources */,
@@ -1924,11 +1974,13 @@
 				EA04241A193C270A003D50DC /* ActivityNoCommentCell.xib in Resources */,
 				EAB7860419386A8B0067BE3D /* Icon_contact.png in Resources */,
 				EA74C56F1939E1E7004A4B09 /* ActivityCell.xib in Resources */,
+				EAD9749519406479004425D9 /* PFActivityDetailViewController.xib in Resources */,
 				EA11A6E8193B311700DEF3A5 /* PFNotificationCell.xib in Resources */,
 				EA0589A7193F598F005A0CE4 /* MyCell.xib in Resources */,
 				EAAEE30B193B456500041BCA /* ProfileTextHead@2x.png in Resources */,
 				EA0F569F19384BBF0015DCEF /* PFUpdateViewController_Wide.xib in Resources */,
 				EA1B61FA1939BC0D0079FBEB /* icon_contact_offIp4.png in Resources */,
+				EAD974991940681E004425D9 /* PFGalleryViewController.xib in Resources */,
 				EAFB5FFA1939D40E002D15AD /* PFActivityDetailViewController_Wide.xib in Resources */,
 				EAB7860819386A8B0067BE3D /* Icon_Website.png in Resources */,
 				EAB7860519386A8B0067BE3D /* Icon_Email.png in Resources */,

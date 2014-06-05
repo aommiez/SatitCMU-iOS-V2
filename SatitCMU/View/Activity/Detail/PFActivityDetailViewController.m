@@ -628,7 +628,15 @@ BOOL refreshData;
 }
 
 - (void)DidUserId:(NSString *)userId {
-    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
+    
+    
+    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
+    } else {
+        seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController" bundle:nil];
+    } 
     seeAct.delegate = self;
     seeAct.userId = userId;
     [self.navigationController  pushViewController:seeAct animated:YES];

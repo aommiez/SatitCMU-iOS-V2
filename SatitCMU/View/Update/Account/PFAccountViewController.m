@@ -81,9 +81,13 @@
 - (void)editProfileTapped {
     
     PFEditAccountViewController *editView = [[PFEditAccountViewController alloc] init];
-    editView = [[PFEditAccountViewController alloc] initWithNibName:@"PFEditAccountViewController_Wide" bundle:nil];
-    editView.delegate = self;
     
+    if (IS_WIDESCREEN) {
+        editView = [[PFEditAccountViewController alloc] initWithNibName:@"PFEditAccountViewController_Wide" bundle:nil];
+    } else {
+        editView = [[PFEditAccountViewController alloc] initWithNibName:@"PFEditAccountViewController" bundle:nil];
+    }
+    editView.delegate = self;
     [self.navigationController pushViewController:editView animated:YES];
 
 }

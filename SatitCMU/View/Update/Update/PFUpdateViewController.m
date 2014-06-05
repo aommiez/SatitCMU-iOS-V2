@@ -107,7 +107,13 @@ NSString *detailText;
     } else {
         
         [self.delegate HideTabbar];
-        PFAccountViewController *accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+        PFAccountViewController *accountView = [[PFAccountViewController alloc] init];
+        
+        if (IS_WIDESCREEN) {
+            accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+        } else {
+            accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
+        }
         accountView.delegate = self;
         [self.navController pushViewController:accountView animated:YES];
         
@@ -128,7 +134,13 @@ NSString *detailText;
     } else {
     
     [self.delegate HideTabbar];
-    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] init];
+        
+    if (IS_WIDESCREEN) {
+        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+    } else {
+        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController" bundle:nil];
+    }
     notifyView.delegate = self;
     [self.navController pushViewController:notifyView animated:YES];
         
@@ -451,15 +463,11 @@ NSString *detailText;
     //[self.waitView removeFromSuperview];
     
     for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
-        
         [self.arrObjGallery addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
-        
     }
     
     for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
-        
         [self.sum addObject:[[[self.arrObjGallery objectAtIndex:i] objectForKey:@"picture"] objectForKey:@"link"]];
-        
     }
     
     [self.delegate HideTabbar];
@@ -565,10 +573,30 @@ NSString *detailText;
     }
 }
 
+- (void)PFAccountViewController:(id)sender{
+    [self.delegate HideTabbar];
+    
+    PFAccountViewController *accountView = [[PFAccountViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+    } else {
+        accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
+    }
+    accountView.delegate = self;
+    [self.navController pushViewController:accountView animated:YES];
+}
+
 - (void)PFNotifyViewController:(id)sender{
     [self.delegate HideTabbar];
     
-    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
+    } else {
+        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController" bundle:nil];
+    }
     notifyView.delegate = self;
     [self.navController pushViewController:notifyView animated:YES];
 }

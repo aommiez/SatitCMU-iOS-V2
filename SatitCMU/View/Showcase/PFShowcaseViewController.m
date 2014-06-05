@@ -146,7 +146,13 @@ NSString *detailText;
     
     [self.delegate HideTabbar];
     
-    PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+    PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+    } else {
+        showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController" bundle:nil];  
+    }
     
     showcaseGallery.delegate = self;
     

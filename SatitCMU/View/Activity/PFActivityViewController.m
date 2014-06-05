@@ -179,7 +179,7 @@ BOOL refreshDataAc;
     if (IS_WIDESCREEN){
         actDetailViewController = [[PFActivityDetailViewController alloc] initWithNibName:@"PFActivityDetailViewController_Wide" bundle:nil];
     }else{
-        actDetailViewController = [[PFActivityDetailViewController alloc] initWithNibName:@"PFActivityDetailViewController"bundle:nil];
+        actDetailViewController = [[PFActivityDetailViewController alloc] initWithNibName:@"PFActivityDetailViewController"bundle:nil]; 
     }
     
     actDetailViewController.delegate = self;

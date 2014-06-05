@@ -227,7 +227,6 @@ BOOL refreshData;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -409,6 +408,7 @@ BOOL refreshData;
 }
 
 - (UIImage *)imageRotatedByDegrees:(UIImage*)oldImage deg:(CGFloat)degrees{
+    
     // calculate the size of the rotated view's containing box for our drawing space
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,oldImage.size.width, oldImage.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(degrees * M_PI / 180);
@@ -430,7 +430,9 @@ BOOL refreshData;
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return newImage;
+    
 }
 
 - (void)PESatitApiManager:(id)sender getCommentObjectIdResponse:(NSDictionary *)response {
@@ -687,7 +689,13 @@ BOOL refreshData;
 }
 
 - (void)DidUserId:(NSString *)userId {
-    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
+    PFSeeAccountViewController *seeAct = [[PFSeeAccountViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController_Wide" bundle:nil];
+    } else {
+        seeAct = [[PFSeeAccountViewController alloc] initWithNibName:@"PFSeeAccountViewController" bundle:nil];
+    }
     seeAct.delegate = self;
     seeAct.userId = userId;
     [self.navigationController  pushViewController:seeAct animated:YES];
