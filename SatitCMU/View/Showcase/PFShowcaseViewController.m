@@ -16,6 +16,10 @@ BOOL loadz;
 BOOL noDatazz;
 BOOL refreshDataz;
 
+NSString *totalImg;
+NSString *titleText;
+NSString *detailText;
+
 @implementation PFShowcaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -53,6 +57,8 @@ BOOL refreshDataz;
     [self.satitApi galleryLimit:@"5" link:@"NO"];
     
     self.arrObj = [[NSMutableArray alloc] init];
+    self.arrObjGallery = [[NSMutableArray alloc] init];
+    self.sum = [[NSMutableArray alloc] init];
     
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:146.0f/255.0f green:90.0f/255.0f blue:202.0f/255.0f alpha:1.0f]];
@@ -112,11 +118,51 @@ BOOL refreshDataz;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate HideTabbar];
+    totalImg = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"picture_length"];
+    titleText = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"];
+    detailText = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"description"];
+    
+    [self.arrObjGallery removeAllObjects];
+    [self.sum removeAllObjects];
+    
+    [self.satitApi galleryPictureByid:[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"]];
+}
 
-     PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
-     showcaseGallery.delegate = self;
-     [self.navController pushViewController:showcaseGallery animated:YES];
+- (void)PESatitApiManager:(id)sender galleryPictureByIdResponse:(NSDictionary *)response {
+    
+    //[self.waitView removeFromSuperview];
+    
+    for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
+        
+        [self.arrObjGallery addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+    
+    }
+    
+    for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
+        
+        [self.sum addObject:[[[self.arrObjGallery objectAtIndex:i] objectForKey:@"picture"] objectForKey:@"link"]];
+        
+    }
+    
+    [self.delegate HideTabbar];
+    
+    PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+    
+    showcaseGallery.delegate = self;
+    
+    showcaseGallery.arrObj = self.arrObjGallery;
+    showcaseGallery.sumimg = self.sum;
+    showcaseGallery.totalImg = totalImg;
+    showcaseGallery.titleText = titleText;
+    showcaseGallery.detailText = detailText;
+    
+    [self.navController pushViewController:showcaseGallery animated:YES];
+    
+    
+}
+
+- (void)PESatitApiManager:(id)sender galleryPictureByIdErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 #pragma mark - API Delegate
@@ -124,6 +170,8 @@ BOOL refreshDataz;
 - (void)PESatitApiManager:(id)sender galleryResponse:(NSDictionary *)response {
     
     [self.waitView removeFromSuperview];
+    
+    //NSLog(@"%@",response);
     
     if (!refreshDataz) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
@@ -148,6 +196,10 @@ BOOL refreshDataz;
 
 - (void)PESatitApiManager:(id)sender galleryErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
+}
+
+- (void)PFFullimageViewController:(NSMutableArray *)sum current:(NSString *)current {
+    [self.delegate PFGalleryViewController:self sum:sum current:current];
 }
 
 - (void)PFGalleryViewControllerBack {

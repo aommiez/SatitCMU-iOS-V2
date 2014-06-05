@@ -20,11 +20,15 @@
 		36574CA9193841E600F75616 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36574CA7193841E600F75616 /* InfoPlist.strings */; };
 		36574CAB193841E600F75616 /* SatitCMUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36574CAA193841E600F75616 /* SatitCMUTests.m */; };
 		36574CBA1938444900F75616 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36574CB91938444900F75616 /* FacebookSDK.framework */; };
-		EA03873F193B8857001CB755 /* PFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA03873D193B8857001CB755 /* PFGalleryViewController.m */; };
-		EA038740193B8857001CB755 /* PFGalleryViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA03873E193B8857001CB755 /* PFGalleryViewController_Wide.xib */; };
+		EA0347C8194013FF00563F34 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0347C7194013FF00563F34 /* HeaderView.m */; };
+		EA0347CA1940157900563F34 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0347C91940157900563F34 /* HeaderView.xib */; };
 		EA04241A193C270A003D50DC /* ActivityNoCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA042419193C270A003D50DC /* ActivityNoCommentCell.xib */; };
 		EA0566B719397BEE00951F80 /* ShowCaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0566B519397BEE00951F80 /* ShowCaseCell.m */; };
 		EA0566B819397BEE00951F80 /* ShowCaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0566B619397BEE00951F80 /* ShowCaseCell.xib */; };
+		EA0589A6193F598F005A0CE4 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0589A1193F598F005A0CE4 /* MyCell.m */; };
+		EA0589A7193F598F005A0CE4 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0589A2193F598F005A0CE4 /* MyCell.xib */; };
+		EA0589A8193F598F005A0CE4 /* PFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0589A4193F598F005A0CE4 /* PFGalleryViewController.m */; };
+		EA0589A9193F598F005A0CE4 /* PFGalleryViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0589A5193F598F005A0CE4 /* PFGalleryViewController_Wide.xib */; };
 		EA0869D11938CD490064D2DD /* PFMapViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0869CE1938CD490064D2DD /* PFMapViewController_Wide.xib */; };
 		EA0869D21938CD490064D2DD /* PFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0869D01938CD490064D2DD /* PFMapViewController.m */; };
 		EA0869DC1938CFEB0064D2DD /* ContactLabelDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0869D51938CFEB0064D2DD /* ContactLabelDescCell.m */; };
@@ -328,13 +332,19 @@
 		36574CA8193841E600F75616 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36574CAA193841E600F75616 /* SatitCMUTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SatitCMUTests.m; sourceTree = "<group>"; };
 		36574CB91938444900F75616 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
-		EA03873C193B8857001CB755 /* PFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGalleryViewController.h; sourceTree = "<group>"; };
-		EA03873D193B8857001CB755 /* PFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGalleryViewController.m; sourceTree = "<group>"; };
-		EA03873E193B8857001CB755 /* PFGalleryViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFGalleryViewController_Wide.xib; sourceTree = "<group>"; };
+		EA0347C6194013FF00563F34 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		EA0347C7194013FF00563F34 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		EA0347C91940157900563F34 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		EA042419193C270A003D50DC /* ActivityNoCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityNoCommentCell.xib; path = View/Update/Update/ActivityNoCommentCell.xib; sourceTree = SOURCE_ROOT; };
 		EA0566B419397BEE00951F80 /* ShowCaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCaseCell.h; path = View/Showcase/ShowCaseCell.h; sourceTree = SOURCE_ROOT; };
 		EA0566B519397BEE00951F80 /* ShowCaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCaseCell.m; path = View/Showcase/ShowCaseCell.m; sourceTree = SOURCE_ROOT; };
 		EA0566B619397BEE00951F80 /* ShowCaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowCaseCell.xib; path = View/Showcase/ShowCaseCell.xib; sourceTree = SOURCE_ROOT; };
+		EA0589A0193F598F005A0CE4 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		EA0589A1193F598F005A0CE4 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		EA0589A2193F598F005A0CE4 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		EA0589A3193F598F005A0CE4 /* PFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGalleryViewController.h; sourceTree = "<group>"; };
+		EA0589A4193F598F005A0CE4 /* PFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGalleryViewController.m; sourceTree = "<group>"; };
+		EA0589A5193F598F005A0CE4 /* PFGalleryViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFGalleryViewController_Wide.xib; sourceTree = "<group>"; };
 		EA0869CE1938CD490064D2DD /* PFMapViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMapViewController_Wide.xib; path = View/Contact/Map/PFMapViewController_Wide.xib; sourceTree = SOURCE_ROOT; };
 		EA0869CF1938CD490064D2DD /* PFMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMapViewController.h; path = View/Contact/Map/PFMapViewController.h; sourceTree = SOURCE_ROOT; };
 		EA0869D01938CD490064D2DD /* PFMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMapViewController.m; path = View/Contact/Map/PFMapViewController.m; sourceTree = SOURCE_ROOT; };
@@ -1646,9 +1656,15 @@
 		EA3D4497193B81FD001BFE55 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				EA03873C193B8857001CB755 /* PFGalleryViewController.h */,
-				EA03873D193B8857001CB755 /* PFGalleryViewController.m */,
-				EA03873E193B8857001CB755 /* PFGalleryViewController_Wide.xib */,
+				EA0347C6194013FF00563F34 /* HeaderView.h */,
+				EA0347C7194013FF00563F34 /* HeaderView.m */,
+				EA0347C91940157900563F34 /* HeaderView.xib */,
+				EA0589A3193F598F005A0CE4 /* PFGalleryViewController.h */,
+				EA0589A4193F598F005A0CE4 /* PFGalleryViewController.m */,
+				EA0589A5193F598F005A0CE4 /* PFGalleryViewController_Wide.xib */,
+				EA0589A0193F598F005A0CE4 /* MyCell.h */,
+				EA0589A1193F598F005A0CE4 /* MyCell.m */,
+				EA0589A2193F598F005A0CE4 /* MyCell.xib */,
 			);
 			name = Gallery;
 			path = View/Showcase/Gallery;
@@ -1877,7 +1893,6 @@
 				EA1B61FD1939BC0D0079FBEB /* icon_showcase_onIp4.png in Resources */,
 				EA0869EF1938D3290064D2DD /* DarkGrayBGIp5@2x.png in Resources */,
 				EA086A1D1938D6E40064D2DD /* Create_Button.png in Resources */,
-				EA038740193B8857001CB755 /* PFGalleryViewController_Wide.xib in Resources */,
 				EAAEE307193B456500041BCA /* ProfileImg@2x.png in Resources */,
 				EAAEE30E193B456500041BCA /* PFAccountViewController_Wide.xib in Resources */,
 				EAB785FF19386A8B0067BE3D /* Chapter_02.png in Resources */,
@@ -1897,6 +1912,7 @@
 				EA0869F21938D3290064D2DD /* HeadDetailDZIp5@2x.png in Resources */,
 				EA11A6CD193B236E00DEF3A5 /* NotBoxNoReadIp4@2x.png in Resources */,
 				EA0869F51938D3290064D2DD /* PostBottonIp5@2x.png in Resources */,
+				EA0589A9193F598F005A0CE4 /* PFGalleryViewController_Wide.xib in Resources */,
 				EA086A211938D6E40064D2DD /* Sign_Button.png in Resources */,
 				EA1B62051939BC0D0079FBEB /* icon_showcase_onIp5@2x.png in Resources */,
 				EA4458D319399A980022CBFC /* Powered.png in Resources */,
@@ -1904,10 +1920,12 @@
 				EA1B62031939BC0D0079FBEB /* icon_contact_onIp5@2x.png in Resources */,
 				EAAEE306193B456500041BCA /* PhoneIcon@2x.png in Resources */,
 				EAB7860119386A8B0067BE3D /* Chapter_04.png in Resources */,
+				EA0347CA1940157900563F34 /* HeaderView.xib in Resources */,
 				EA04241A193C270A003D50DC /* ActivityNoCommentCell.xib in Resources */,
 				EAB7860419386A8B0067BE3D /* Icon_contact.png in Resources */,
 				EA74C56F1939E1E7004A4B09 /* ActivityCell.xib in Resources */,
 				EA11A6E8193B311700DEF3A5 /* PFNotificationCell.xib in Resources */,
+				EA0589A7193F598F005A0CE4 /* MyCell.xib in Resources */,
 				EAAEE30B193B456500041BCA /* ProfileTextHead@2x.png in Resources */,
 				EA0F569F19384BBF0015DCEF /* PFUpdateViewController_Wide.xib in Resources */,
 				EA1B61FA1939BC0D0079FBEB /* icon_contact_offIp4.png in Resources */,
@@ -1980,6 +1998,7 @@
 				EA0F5856193861B20015DCEF /* UIButton+WebCache.m in Sources */,
 				EA0F5847193861B20015DCEF /* PSTCollectionViewItemKey.m in Sources */,
 				EA0F581B193861B20015DCEF /* AFURLConnectionOperation.m in Sources */,
+				EA0589A6193F598F005A0CE4 /* MyCell.m in Sources */,
 				EA0F5881193861B20015DCEF /* TKProgressAlertView.m in Sources */,
 				EAFB5FF91939D40E002D15AD /* PFActivityDetailViewController.m in Sources */,
 				EA0F569E19384BBF0015DCEF /* PFUpdateViewController.m in Sources */,
@@ -2001,6 +2020,7 @@
 				EAC2ACFB193C43250005DD93 /* PFUpdateDetailViewController.m in Sources */,
 				EA0F583B193861B20015DCEF /* MWPhotoBrowser.m in Sources */,
 				EA0F589C193861B20015DCEF /* UIImageView+TKCategory.m in Sources */,
+				EA0347C8194013FF00563F34 /* HeaderView.m in Sources */,
 				EA0F5871193861B20015DCEF /* TKCalendarMonthViewController.m in Sources */,
 				EA0F5868193861B20015DCEF /* TKAlertCenter.m in Sources */,
 				EA0F587C193861B20015DCEF /* TKLabelSwitchCell.m in Sources */,
@@ -2009,6 +2029,7 @@
 				EA0F5824193861B20015DCEF /* UIWebView+AFNetworking.m in Sources */,
 				EA0F5877193861B20015DCEF /* TKHTTPRequest.m in Sources */,
 				EA0F586B193861B20015DCEF /* TKButtonCell.m in Sources */,
+				EA0589A8193F598F005A0CE4 /* PFGalleryViewController.m in Sources */,
 				EAAEE313193B456500041BCA /* PFSeeAccountViewController.m in Sources */,
 				EA0F586F193861B20015DCEF /* TKCalendarMonthTableViewController.m in Sources */,
 				EA0F5822193861B20015DCEF /* UIImageView+AFNetworking.m in Sources */,
@@ -2048,7 +2069,6 @@
 				EA11A6DD193B2A7600DEF3A5 /* UpdateCell.m in Sources */,
 				EA0F5854193861B20015DCEF /* SDWebImageManager.m in Sources */,
 				EA0F588A193861B20015DCEF /* TKTableViewCell.m in Sources */,
-				EA03873F193B8857001CB755 /* PFGalleryViewController.m in Sources */,
 				EA0F5898193861B20015DCEF /* UIFont+TKCategory.m in Sources */,
 				EA0F5836193861B20015DCEF /* UIView+MTAnimation.m in Sources */,
 				EA0F583F193861B20015DCEF /* DACircularProgressView.m in Sources */,

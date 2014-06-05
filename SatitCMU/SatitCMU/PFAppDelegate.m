@@ -61,38 +61,38 @@ BOOL newMedia;
     if(IS_WIDESCREEN){
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp5"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp5"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp5@2x.png"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp5@2x.png"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp5"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp5"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp5@2x.png"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp5@2x.png"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp5"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp5"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp5@2x.png"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp5@2x.png"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp5"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp5"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp5@2x.png"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp5@2x.png"]];
         
     }else{
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp4"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp4"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp4.png"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp4.png"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp4"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp4"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp4.png"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp4.png"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp4"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp4"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp4.png"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp4.png"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp4"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp4"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp4.png"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp4.png"]];
         
     }
     

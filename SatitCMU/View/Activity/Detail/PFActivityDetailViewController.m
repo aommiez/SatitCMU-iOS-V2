@@ -391,6 +391,7 @@ BOOL refreshData;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
     UIImageView *imgViewPrev = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 3)];
     UIImageView *imgViewLine = [[UIImageView alloc] initWithFrame:CGRectMake(10, 43, 300, 3)];
@@ -410,7 +411,9 @@ BOOL refreshData;
     [headerView addSubview:button];
     [headerView addSubview:imgViewPrev];
     [headerView addSubview:imgViewLine];
+    
     return headerView;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -656,6 +659,31 @@ BOOL refreshData;
 {
     NSString *picStr = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
     [self.delegate PFActivityDetailViewControllerPhoto:picStr];
+    
+    [UIView mt_animateViews:@[self.textCommentView] duration:0.0 timingFunction:kMTEaseOutSine animations:^{
+        if ( IS_WIDESCREEN) {
+            self.textCommentView.frame = CGRectMake(0, 464+60, 320, 44);
+        } else {
+            self.textCommentView.frame = CGRectMake(0, 440, 320, 44);
+        }
+        self.textComment.frame = CGRectMake(10, 7, 236, 30);
+        self.postBut.frame = CGRectMake(254, 7, 54, 30);
+    } completion:^{
+        
+    }];
+    
+    [UIView animateWithDuration:0.0
+                          delay:0.1  /* starts the animation after 3 seconds */
+                        options:UIViewAnimationCurveEaseOut
+                     animations:^ {
+                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
+                         if ([self.arrObj count] > 0)
+                             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+
 }
 
 @end

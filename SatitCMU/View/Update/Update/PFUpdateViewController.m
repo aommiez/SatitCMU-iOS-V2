@@ -18,6 +18,10 @@ BOOL loadNe;
 BOOL noDataNe;
 BOOL refreshDataNe;
 
+NSString *totalImg;
+NSString *titleText;
+NSString *detailText;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -70,6 +74,8 @@ BOOL refreshDataNe;
     [self.satitApi feedLimit:@"5" link:@"NO"];
     
     self.arrObj = [[NSMutableArray alloc] init];
+    self.arrObjGallery = [[NSMutableArray alloc] init];
+    self.sum = [[NSMutableArray alloc] init];
     
     UIView *hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     self.tableView.tableHeaderView = hv;
@@ -90,21 +96,35 @@ BOOL refreshDataNe;
 
 - (void)account {
     
-//    [self.delegate HideTabbar];
-//    PFAccountViewController *accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
-//    accountView.delegate = self;
-//    [self.navController pushViewController:accountView animated:YES];
+    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
+        
+        [self.satitApi setTokenForGuest];
+        self.loginView = [[PFLoginViewController alloc] init];
+        self.loginView.menu = @"account";
+        self.loginView.delegate = self;
+        [self.view addSubview:self.loginView.view];
+        
+    } else {
+        
+        [self.delegate HideTabbar];
+        PFAccountViewController *accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+        accountView.delegate = self;
+        [self.navController pushViewController:accountView animated:YES];
+        
+    }
     
 }
 
 - (void)notify {
     
     if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
+        
         [self.satitApi setTokenForGuest];
         self.loginView = [[PFLoginViewController alloc] init];
         self.loginView.menu = @"notify";
         self.loginView.delegate = self;
         [self.view addSubview:self.loginView.view];
+        
     } else {
     
     [self.delegate HideTabbar];
@@ -400,16 +420,14 @@ BOOL refreshDataNe;
         
     } else if ([[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"gallery"]) {
         
-        PFGalleryViewController *gallery = [[PFGalleryViewController alloc] init];
+        totalImg = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"gallery"] objectForKey:@"picture_length"];
+        titleText = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"gallery"] objectForKey:@"name"];
+        detailText = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"gallery"] objectForKey:@"description"];
         
-        if (IS_WIDESCREEN){
-            gallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
-        }else{
-            gallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController"bundle:nil];
-        }
+        [self.arrObjGallery removeAllObjects];
+        [self.sum removeAllObjects];
         
-        gallery.delegate = self;
-        [self.navController pushViewController:gallery animated:YES];
+        [self.satitApi galleryPictureByid:[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"gallery"] objectForKey:@"id"]];
         
     } else {
         
@@ -426,6 +444,49 @@ BOOL refreshDataNe;
         [self.navController pushViewController:updateDeatail animated:YES];
         
     }
+}
+
+- (void)PESatitApiManager:(id)sender galleryPictureByIdResponse:(NSDictionary *)response {
+    
+    //[self.waitView removeFromSuperview];
+    
+    for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
+        
+        [self.arrObjGallery addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+        
+    }
+    
+    for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
+        
+        [self.sum addObject:[[[self.arrObjGallery objectAtIndex:i] objectForKey:@"picture"] objectForKey:@"link"]];
+        
+    }
+    
+    [self.delegate HideTabbar];
+    
+    PFGalleryViewController *showcaseGallery = [[PFGalleryViewController alloc] init];
+    
+    if (IS_WIDESCREEN){
+        showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController_Wide" bundle:nil];
+    }else{
+        showcaseGallery = [[PFGalleryViewController alloc] initWithNibName:@"PFGalleryViewController"bundle:nil];
+    }
+    
+    showcaseGallery.delegate = self;
+    
+    showcaseGallery.arrObj = self.arrObjGallery;
+    showcaseGallery.sumimg = self.sum;
+    showcaseGallery.totalImg = totalImg;
+    showcaseGallery.titleText = titleText;
+    showcaseGallery.detailText = detailText;
+    
+    [self.navController pushViewController:showcaseGallery animated:YES];
+    
+    
+}
+
+- (void)PESatitApiManager:(id)sender galleryPictureByIdErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 #pragma mark -
@@ -532,12 +593,20 @@ BOOL refreshDataNe;
     [self.delegate ShowTabbar];
 }
 
+- (void)PFUpdateViewControllerPhoto:(NSString *)link {
+    [self.delegate PFImageViewController:self viewPicture:link];
+}
+
 - (void)PFActivityDetailViewControllerPhoto:(NSString *)link{
     [self.delegate PFImageViewController:self viewPicture:link];
 }
 
 - (void)PFActivityDetailViewControllerBack {
     [self.delegate ShowTabbar];
+}
+
+- (void)PFFullimageViewController:(NSMutableArray *)sum current:(NSString *)current {
+    [self.delegate PFGalleryViewController:self sum:sum current:current];
 }
 
 - (void)PFGalleryViewControllerBack {

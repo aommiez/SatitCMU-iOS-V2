@@ -192,7 +192,7 @@
     self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [self.manager.requestSerializer setValue:[self getUserToken] forHTTPHeaderField:@"X-Auth-Token"];
     [self.manager POST:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+        NSLog(@"likeObject%@",responseObject);
         //[self.delegate PESatitApiManager:self likeObjectResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",[error localizedDescription]);
@@ -206,7 +206,7 @@
     self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [self.manager.requestSerializer setValue:[self getUserToken] forHTTPHeaderField:@"X-Auth-Token"];
     [self.manager DELETE:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+        NSLog(@"unlikeObject%@",responseObject);
         //[self.delegate PESatitApiManager:self unlikeObjectResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",[error localizedDescription]);

@@ -15,6 +15,7 @@
 
 @protocol PFShowcaseViewControllerDelegate <NSObject>
 
+- (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
 - (void)HideTabbar;
 - (void)ShowTabbar;
 
@@ -29,10 +30,10 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *arrObj;
+@property (retain, nonatomic) NSMutableArray *arrObjGallery;
+@property (retain, nonatomic) NSMutableArray *sum;
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;
-@property (nonatomic, weak ) NSString *desText;
-@property (nonatomic, weak ) NSString *nameText;
 @property (retain, nonatomic) NSString *paging;
 
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *act;

@@ -70,7 +70,7 @@
     
     NSString *picStr = [[NSString alloc] initWithFormat:@"%@user/%@/picture",API_URL,[self.coreData objectForKey:@"id"]];
     self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
-    //NSLog(@"%@",self.coreData);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,8 +79,6 @@
 }
 
 - (void)editProfileTapped {
-
-    [self.delegate HideTabbar];
     
     PFEditAccountViewController *editView = [[PFEditAccountViewController alloc] init];
     editView = [[PFEditAccountViewController alloc] initWithNibName:@"PFEditAccountViewController_Wide" bundle:nil];
@@ -111,7 +109,7 @@
         }
     
         [self.navigationController popViewControllerAnimated:YES];
-        
+    
     //}
 }
 

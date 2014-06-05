@@ -33,6 +33,8 @@
 - (IBAction)signupTapeed:(id)sender;
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)signinTapped:(id)sender;
+- (IBAction)dateBTapped:(id)sender;
+- (IBAction)sumitTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *emailSignUp;
@@ -41,11 +43,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthSignUp;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *selectGender;
 
-- (IBAction)dateBTapped:(id)sender;
-
 @property (retain, nonatomic) UIDatePicker *pick;
 @property (retain, nonatomic) UIButton *pickDone;
-- (IBAction)sumitTapped:(id)sender;
 
 @property (strong, nonatomic) NSString *menu;
 

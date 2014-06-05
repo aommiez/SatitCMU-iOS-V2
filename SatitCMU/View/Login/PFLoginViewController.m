@@ -15,6 +15,7 @@
 @implementation PFLoginViewController
 
 NSString *gender;
+NSString *password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,7 +67,7 @@ NSString *gender;
     
     [self.view addSubview:self.loginView];
 
-    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 80, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
         NSLog(@"animation ok");
@@ -79,9 +80,10 @@ NSString *gender;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark - function helper
 - (void)delView {
-    [UIView animateWithDuration:0.0
+    [UIView animateWithDuration:0.3
                           delay:0.0
                         options: UIViewAnimationCurveEaseInOut
                      animations:^{self.blurView.alpha = 0;}
@@ -97,10 +99,11 @@ NSString *gender;
     [self.passwordSignUp resignFirstResponder];
     [self.confirmSignUp resignFirstResponder];
 }
+
 -(void)dateBirthButtonClicked {
     self.registerView.alpha = 1;
     self.blurView.userInteractionEnabled = YES;
-    [UIView animateWithDuration:0.0
+    [UIView animateWithDuration:0.3
                           delay:0.0  /* starts the animation after 3 seconds */
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
@@ -118,20 +121,22 @@ NSString *gender;
                          
                      }];
 }
+
 - (BOOL)validateEmail:(NSString *)emailStr {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:emailStr];
 }
+
 - (void)closeBox {
     [self hideKeyboard];
     
-    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 600, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
         //[self.view removeFromSuperview];
     }];
-    [UIView mt_animateViews:@[self.registerView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.registerView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
         self.registerView.frame = CGRectMake(20, 600, self.registerView.frame.size.width, self.registerView.frame.size.height);
     } completion:^{
         //[self.view removeFromSuperview];
@@ -151,10 +156,10 @@ NSString *gender;
     [scrollview addSubview:self.registerView];
     [self.view addSubview:scrollview];
     
-    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 600, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
-        [UIView mt_animateViews:@[self.registerView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
+        [UIView mt_animateViews:@[self.registerView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
             self.registerView.frame = CGRectMake(20, 70, self.registerView.frame.size.width, self.registerView.frame.size.height);
         } completion:^{
             NSLog(@"animation ok");
@@ -181,11 +186,12 @@ NSString *gender;
         }
     }
 }
+
 - (IBAction)dateBTapped:(id)sender {
     [self hideKeyboard];
     self.registerView.alpha = 0;
     self.blurView.userInteractionEnabled = NO;
-    [UIView animateWithDuration:0.0
+    [UIView animateWithDuration:0.3
                           delay:0.0  /* starts the animation after 3 seconds */
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
@@ -208,7 +214,11 @@ NSString *gender;
                          
                      }];
 }
+
 - (IBAction)sumitTapped:(id)sender {
+    
+    password = self.passwordSignUp.text;
+    
     if (self.selectGender.selectedSegmentIndex == 0) {
         gender = @"Male";
     } else {
@@ -266,6 +276,7 @@ NSString *gender;
         [self.satitApi signupWithUsername:self.username.text email:self.emailSignUp.text password:self.passwordSignUp.text gender:gender dateOfBirth:self.dateOfBirthSignUp.text];
     }
 }
+
 #pragma mark - Satit Api Delegate
 - (void)PESatitApiManager:(id)sender loginWithEmailResponse:(NSDictionary *)response {
     if ([[[response objectForKey:@"error"] objectForKey:@"code"] intValue] == 401 ) {
@@ -289,6 +300,7 @@ NSString *gender;
         }
     }
 }
+
 - (void)PESatitApiManager:(id)sender loginWithEmailErrorResponse:(NSString *)errorResponse {
     [[[UIAlertView alloc] initWithTitle:@"Login failed"
                                 message:errorResponse
@@ -296,7 +308,10 @@ NSString *gender;
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
+
 - (void)PESatitApiManager:(id)sender signupWithUsernameResponse:(NSDictionary *)response {
+    
+    NSLog(@"%@",response);
     if ([response objectForKey:@"error"] != nil ) {
         [[[UIAlertView alloc] initWithTitle:@"Signup failed"
                                     message:[[response objectForKey:@"error"] objectForKey:@"message"]
@@ -306,8 +321,12 @@ NSString *gender;
     } else {
         [self.satitApi saveCoreData:response];
         [self closeBox];
+        [self hideKeyboard];
+    
+        //[self.satitApi loginWithEmail:[response objectForKey:@"username"] Password:password deviceToken:@"a"];
     }
 }
+
 - (void)PESatitApiManager:(id)sender signupWithUsernameErrorResponse:(NSString *)errorResponse {
     [[[UIAlertView alloc] initWithTitle:@"Signup failed"
                                 message:errorResponse
@@ -315,6 +334,7 @@ NSString *gender;
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
+
 - (void)PESatitApiManager:(id)sender loginWithFacebookResponse:(NSDictionary *)response {
     //NSLog(@"%@",response);
     [self.satitApi saveToCoreData:response];
@@ -345,12 +365,15 @@ NSString *gender;
                             user:(id<FBGraphUser>)user {
     [self.satitApi loginWithFacebook:[user objectForKey:@"email"] fbid:[user objectForKey:@"id"] firstName:[user objectForKey:@"first_name"] lastName:[user objectForKey:@"last_name"] username:[user objectForKey:@"username"] deviceToken:@"no"];
 }
+
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     NSLog(@"You're logged in as");
 }
+
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     NSLog(@"You're not logged in!");
 }
+
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
@@ -395,6 +418,7 @@ NSString *gender;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField  {
+    
     [self.emailSignIn resignFirstResponder];
     [self.passwordSignIn resignFirstResponder];
     

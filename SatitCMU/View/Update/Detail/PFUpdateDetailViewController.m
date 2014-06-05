@@ -184,6 +184,7 @@ BOOL refreshData;
 - (IBAction)postCommentTapped:(id)sender {
     
     [self.tableView reloadData];
+    
     [UIView mt_animateViews:@[self.textCommentView] duration:0.34 timingFunction:kMTEaseOutSine animations:^{
         if ( IS_WIDESCREEN) {
             self.textCommentView.frame = CGRectMake(0, 464+60, 320, 44);
@@ -277,6 +278,7 @@ BOOL refreshData;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
     UIImageView *imgViewPrev = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 3)];
     UIImageView *imgViewLine = [[UIImageView alloc] initWithFrame:CGRectMake(10, 43, 300, 3)];
@@ -296,7 +298,9 @@ BOOL refreshData;
     [headerView addSubview:button];
     [headerView addSubview:imgViewPrev];
     [headerView addSubview:imgViewLine];
+    
     return headerView;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -572,6 +576,7 @@ BOOL refreshData;
 }
 
 - (void)PESatitApiManager:(id)sender checkLikeObjectResponse:(NSDictionary *)response {
+    
     if ( [[[response objectForKey:@"like"] objectForKey:@"is_liked"] intValue] == 1 ) {
         [self.satitApi unlikeObject:[self.obj objectForKey:@"id"]];
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"LikeBottonIp5"] forState:UIControlStateNormal];
@@ -591,6 +596,7 @@ BOOL refreshData;
 }
 
 - (void)PESatitApiManager:(id)sender CommentObjectIdResponse:(NSDictionary *)response {
+    
     [self.textComment resignFirstResponder];
     
     [UIView mt_animateViews:@[self.textCommentView] duration:0.34 timingFunction:kMTEaseOutSine animations:^{
@@ -685,6 +691,10 @@ BOOL refreshData;
     seeAct.delegate = self;
     seeAct.userId = userId;
     [self.navigationController  pushViewController:seeAct animated:YES];
+}
+
+- (void)PFSeeAccountViewController:(id)sender viewPicture:(NSString *)link {
+   [self.delegate PFUpdateViewControllerPhoto:link];
 }
 
 @end

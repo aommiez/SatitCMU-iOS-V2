@@ -21,8 +21,6 @@
 
 - (void)PFAccountViewControllerBack;
 - (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link;
-- (void)HideTabbar;
-- (void)ShowTabbar;
 
 @end
 

@@ -20,6 +20,7 @@
 
 - (void)PFUpdateDetailViewControllerBack;
 - (void)PFUpdateDetailViewController:(id)sender viewPicture:(NSString *)link;
+- (void)PFUpdateViewControllerPhoto:(NSString *)link;
 
 @end
 
