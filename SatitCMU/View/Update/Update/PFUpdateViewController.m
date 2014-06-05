@@ -557,6 +557,10 @@ NSString *detailText;
     }
 }
 - (void)resizeTable {
+    
+    self.loadLabel.text = @"";
+    self.act.alpha = 0;
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     self.tableView.frame = CGRectMake(0, 0, 320, self.tableView.frame.size.height);
