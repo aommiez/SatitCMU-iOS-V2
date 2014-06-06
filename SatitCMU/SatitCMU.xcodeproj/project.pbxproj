@@ -241,6 +241,7 @@
 		EA1B62071939BC0D0079FBEB /* icon_update_onIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B61F71939BC0D0079FBEB /* icon_update_onIp5@2x.png */; };
 		EA1B620B1939C8780079FBEB /* Notification_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B62091939C8780079FBEB /* Notification_icon@2x.png */; };
 		EA1B620C1939C8780079FBEB /* Setting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B620A1939C8780079FBEB /* Setting_icon@2x.png */; };
+		EA3142761941510B00A89C53 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3142751941510B00A89C53 /* default.jpg */; };
 		EA31D8D7193878F4000DD23B /* PFWebViewViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA31D8D4193878F4000DD23B /* PFWebViewViewController_Wide.xib */; };
 		EA31D8D8193878F4000DD23B /* PFWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA31D8D6193878F4000DD23B /* PFWebViewViewController.m */; };
 		EA4458D319399A980022CBFC /* Powered.png in Resources */ = {isa = PBXBuildFile; fileRef = EA4458D119399A980022CBFC /* Powered.png */; };
@@ -735,6 +736,7 @@
 		EA1B61F71939BC0D0079FBEB /* icon_update_onIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_update_onIp5@2x.png"; sourceTree = "<group>"; };
 		EA1B62091939C8780079FBEB /* Notification_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Notification_icon@2x.png"; path = "ImagesTab/Notification_icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		EA1B620A1939C8780079FBEB /* Setting_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Setting_icon@2x.png"; path = "ImagesTab/Setting_icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		EA3142751941510B00A89C53 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		EA31D8D4193878F4000DD23B /* PFWebViewViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFWebViewViewController_Wide.xib; path = View/Contact/Web/PFWebViewViewController_Wide.xib; sourceTree = SOURCE_ROOT; };
 		EA31D8D5193878F4000DD23B /* PFWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFWebViewViewController.h; path = View/Contact/Web/PFWebViewViewController.h; sourceTree = SOURCE_ROOT; };
 		EA31D8D6193878F4000DD23B /* PFWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFWebViewViewController.m; path = View/Contact/Web/PFWebViewViewController.m; sourceTree = SOURCE_ROOT; };
@@ -1689,9 +1691,18 @@
 			path = ImagesTab/5;
 			sourceTree = SOURCE_ROOT;
 		};
+		EA3142741941510B00A89C53 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				EA3142751941510B00A89C53 /* default.jpg */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		EA3D4497193B81FD001BFE55 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				EA3142741941510B00A89C53 /* image */,
 				EA0347C6194013FF00563F34 /* HeaderView.h */,
 				EA0347C7194013FF00563F34 /* HeaderView.m */,
 				EA0347C91940157900563F34 /* HeaderView.xib */,
@@ -1916,6 +1927,7 @@
 				EA7FCB1419388D9B00AB01A6 /* icon_reload@2x.png in Resources */,
 				EAD974A319406969004425D9 /* PFUpdateViewController.xib in Resources */,
 				EAD9748D19406374004425D9 /* PFWebViewViewController.xib in Resources */,
+				EA3142761941510B00A89C53 /* default.jpg in Resources */,
 				EA11A6DB193B2A7600DEF3A5 /* ActivityNoPicCell.xib in Resources */,
 				EA11A6CE193B236E00DEF3A5 /* NotBoxNoReadIp5@2x.png in Resources */,
 				EA1B620C1939C8780079FBEB /* Setting_icon@2x.png in Resources */,
