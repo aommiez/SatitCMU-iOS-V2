@@ -29,7 +29,6 @@
 - (void)presentHighlightedState{
     [self setImage:self.highlightedImage forState:UIControlStateNormal];
     [self setImage:self.highlightedImage forState:UIControlStateHighlighted];
-    
 }
 
 - (void)setBadge:(NSString *)badge{

@@ -10,9 +10,11 @@
 #define kTabBarHeight 48
 int oldIndex;
 @interface PFTabBarViewController ()
+
 - (void)updateTabBarItem:(id)sender;
 - (CGFloat)horizontalLocationFor:(NSUInteger)tabIndex;
 - (void)showNotificationViewFor:(NSUInteger)tabIndex;
+
 @end
 @interface PFTabBarViewController ()
 
@@ -94,7 +96,6 @@ int oldIndex;
     }
     self.tabBarView.alpha = 0.9;
     
-    
     [[self.viewControllers objectAtIndex:selectedIndex] setWantsFullScreenLayout:YES];
     [self.mainView addSubview:[[self.viewControllers objectAtIndex:selectedIndex] view]];
     oldIndex = selectedIndex;
@@ -149,7 +150,7 @@ int oldIndex;
             i++;
         }
         _mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        //[_mainView setBlurTintColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:.8]];
+        
         [self.view addSubview:self.mainView];
         [self.view addSubview:self.tabBarView];
         

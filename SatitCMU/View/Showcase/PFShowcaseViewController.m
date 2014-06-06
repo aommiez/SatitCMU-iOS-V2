@@ -164,7 +164,6 @@ NSString *detailText;
     
     [self.navController pushViewController:showcaseGallery animated:YES];
     
-    
 }
 
 - (void)PESatitApiManager:(id)sender galleryPictureByIdErrorResponse:(NSString *)errorResponse {

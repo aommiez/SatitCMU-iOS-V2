@@ -28,6 +28,11 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) PFTabBarViewController *tabBarViewController;
 
+@property (strong, nonatomic) PFUpdateViewController *update;
+@property (strong, nonatomic) PFShowcaseViewController *showcase;
+@property (strong, nonatomic) PFActivityViewController *activity;
+@property (strong, nonatomic) PFContactViewController *contact;
+
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;
 

@@ -460,8 +460,6 @@ NSString *detailText;
 
 - (void)PESatitApiManager:(id)sender galleryPictureByIdResponse:(NSDictionary *)response {
     
-    //[self.waitView removeFromSuperview];
-    
     for (int i = 0; i < [[response objectForKey:@"data"] count]; i++) {
         [self.arrObjGallery addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
     }
@@ -501,8 +499,6 @@ NSString *detailText;
 #pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-	//NSLog(@"%f",scrollView.contentOffset.y);
-	//[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
     
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -514,6 +510,7 @@ NSString *detailText;
         [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
         self.loadLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:[NSDate date]]];
         self.act.alpha =1;
+        
     }
 }
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -524,9 +521,11 @@ NSString *detailText;
         self.satitApi = [[PESatitApiManager alloc] init];
         self.satitApi.delegate = self;
         [self.satitApi feedLimit:@"5" link:@"NO"];
+        
     } else {
         self.loadLabel.text = @"";
         self.act.alpha = 0;
+
     }
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -538,9 +537,11 @@ NSString *detailText;
         self.tableView.frame = CGRectMake(0, 60, 320, self.tableView.frame.size.height);
 		[UIView commitAnimations];
         [self performSelector:@selector(resizeTable) withObject:nil afterDelay:2];
+        
     } else {
         self.loadLabel.text = @"";
         self.act.alpha = 0;
+
     }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
