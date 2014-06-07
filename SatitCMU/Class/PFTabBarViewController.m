@@ -34,7 +34,6 @@ int oldIndex;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 - (void)viewDidUnload {
     [self setTabBarBackgroundImageView:nil];
@@ -128,7 +127,7 @@ int oldIndex;
         }
         va_end(args);
         
-        self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kTabBarHeight+4, self.view.frame.size.width, kTabBarHeight-4)];
+        self.tabBarView = [[AMBlurView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kTabBarHeight+4, self.view.frame.size.width, kTabBarHeight-4)];
         
         self.tabBarBackgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.tabBarView.frame.size.width, kTabBarHeight-4)];
         
@@ -149,7 +148,7 @@ int oldIndex;
             [_itemButtons addObject:(PFTabBarItemButton*)button];
             i++;
         }
-        _mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        _mainView = [[AMBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         
         [self.view addSubview:self.mainView];
         [self.view addSubview:self.tabBarView];
@@ -237,4 +236,5 @@ int oldIndex;
     self.notificationView.alpha = 0.0;
     [UIView commitAnimations];
 }
+
 @end

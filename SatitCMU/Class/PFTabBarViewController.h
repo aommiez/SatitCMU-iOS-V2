@@ -7,24 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFCustomBadge.h"
 #import "PFTabBarItemButton.h"
+#import "AMBlurView.h"
 
 @protocol PFTabBarViewControllerDelegate <NSObject>
 @optional
+
 - (void)PFTabBarViewController:(id)sender selectedIndex:(int)index;
+
 @end
 
 @interface PFTabBarViewController : UIViewController
 
-@property (strong, nonatomic) UIView *mainView;
-@property (strong, nonatomic) UIView *tabBarView;
+@property (strong, nonatomic) AMBlurView *mainView;
+@property (strong, nonatomic) AMBlurView *tabBarView;
 @property (strong, nonatomic) UIImageView *tabBarBackgroundImageView;
 @property (assign, nonatomic) id <PFTabBarViewControllerDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet UILabel *mesg0Label;
 @property (weak, nonatomic) IBOutlet UILabel *mesg1Label;
 @property (weak, nonatomic) IBOutlet UILabel *mesg2Label;
-@property (readonly, nonatomic) NSMutableArray *itemButtons;
-@property (readonly, nonatomic) NSMutableArray *viewControllers;
+
+@property (nonatomic, strong) NSMutableArray *itemButtons;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
 
 @property (nonatomic, weak) UIView* notificationView;
 

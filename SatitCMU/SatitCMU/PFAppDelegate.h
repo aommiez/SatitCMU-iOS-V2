@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "PFTabBarViewController.h"
-#import "PFTabBarItemButton.h"
 
 #import "PESatitApiManager.h"
 
@@ -23,7 +22,7 @@
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"
 
-@interface PFAppDelegate : UIResponder <UIApplicationDelegate,MWPhotoBrowserDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface PFAppDelegate : UIResponder < UIApplicationDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,MWPhotoBrowserDelegate >
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) PFTabBarViewController *tabBarViewController;

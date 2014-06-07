@@ -39,6 +39,7 @@
 		self.badgeScaleFactor = scale;
 		self.badgeShining = shining;
 		[self autoBadgeSizeWithString:badgeString];
+        
 	}
 	return self;
 }
@@ -158,7 +159,6 @@
 	
 	CGContextRestoreGState(context);
 }
-
 
 // Draws the Badge Frame with Quartz
 -(void) drawFrameWithContext:(CGContextRef)context withRect:(CGRect)rect

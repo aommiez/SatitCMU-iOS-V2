@@ -51,51 +51,51 @@ BOOL newMedia;
         
     }
     
+    self.tabBarViewController = [[PFTabBarViewController alloc] initWithBackgroundImage:nil viewControllers:self.update,self.showcase,self.activity,self.contact,nil];
+    
     self.update.delegate = self;
     self.showcase.delegate = self;
     self.activity.delegate = self;
     self.contact.delegate = self;
     
-    self.tabBarViewController = [[PFTabBarViewController alloc] initWithBackgroundImage:nil viewControllers:self.update,self.showcase,self.activity,self.contact,nil];
-    
     if(IS_WIDESCREEN){
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp5"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp5"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_off"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp5"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp5"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_off"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp5"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp5"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_off"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp5"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp5"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_off"]];
         
     }else{
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_onIp4"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_offIp4"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_off"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_onIp4"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_offIp4"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_off"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_onIp4"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_offIp4"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_off"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_onIp4"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_offIp4"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_off"]];
         
     }
-    
+
     [self.tabBarViewController setSelectedIndex:0];
     [self.window setRootViewController:self.tabBarViewController];
     [self.window makeKeyAndVisible];
