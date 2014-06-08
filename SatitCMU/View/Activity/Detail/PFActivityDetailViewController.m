@@ -202,24 +202,15 @@ BOOL refreshData;
         self.textComment.text = @"Add Comment";
     }
 
-    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
-        
-        [self.satitApi setTokenForGuest];
-        self.loginView = [[PFLoginViewController alloc] init];
-        [self.view addSubview:self.loginView.view];
-        
-    } else {
-        NSString *urlString = [[NSString alloc]init];
-        urlString = [[NSString alloc]initWithFormat:@"%@pic/%@?display=custom&size_x=640",API_URL,[self.obj objectForKey:@"picture_id"]];
-        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+    NSString *urlString = [[NSString alloc]init];
+    urlString = [[NSString alloc]initWithFormat:@"%@pic/%@?display=custom&size_x=640",API_URL,[self.obj objectForKey:@"picture_id"]];
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
             SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-            [controller addURL:[NSURL URLWithString:urlString]];
-            [controller setInitialText:[self.obj objectForKey:@"message"]];
-            [self presentViewController:controller animated:YES completion:Nil];
-        } else {
-            
-        }
+        [controller addURL:[NSURL URLWithString:urlString]];
+        [controller setInitialText:[self.obj objectForKey:@"message"]];
+        [self presentViewController:controller animated:YES completion:Nil];
     }
+
 }
 
 - (void)joinTapped:(id)sender {

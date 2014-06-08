@@ -67,8 +67,7 @@ BOOL refreshData;
     descText.numberOfLines = lines;
     [descText setFont:[UIFont systemFontOfSize:15]];
     self.msgLabel.alpha = 0;
-    [self.detailView addSubview:descText];
-   
+    [self.detailView addSubview:descText];   
     
     if (![[self.obj objectForKey:@"picture_id"] isEqualToString:@"0"]) {
         
@@ -558,23 +557,15 @@ BOOL refreshData;
         self.textComment.text = @"Add Comment";
     }
     
-    if ([[self.satitApi getAuth] isEqualToString:@"NO Login"]) {
-        [self.satitApi setTokenForGuest];
-        self.loginView = [[PFLoginViewController alloc] init];
-        [self.view addSubview:self.loginView.view];
-
-    } else {
-        NSString *urlString = [[NSString alloc]init];
-        urlString = [[NSString alloc]initWithFormat:@"%@",[self.obj objectForKey:@"share_link"]];
-        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+    NSString *urlString = [[NSString alloc]init];
+    urlString = [[NSString alloc]initWithFormat:@"%@",[self.obj objectForKey:@"share_link"]];
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
             SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-            [controller addURL:[NSURL URLWithString:urlString]];
-            [controller setInitialText:[self.obj objectForKey:@"message"]];
-            [self presentViewController:controller animated:YES completion:Nil];
-        } else {
-        
-        }
+        [controller addURL:[NSURL URLWithString:urlString]];
+        [controller setInitialText:[self.obj objectForKey:@"message"]];
+        [self presentViewController:controller animated:YES completion:Nil];
     }
+
 }
 
 - (void)PESatitApiManager:(id)sender checkLikeObjectResponse:(NSDictionary *)response {

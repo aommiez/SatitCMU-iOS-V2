@@ -138,7 +138,14 @@
 
     [self.delegate ShowTabbar];
     
-    PFUpdateViewController *news = [[PFUpdateViewController alloc] initWithNibName:@"PFUpdateViewController_Wide" bundle:nil];
+    PFUpdateViewController *news = [[PFUpdateViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        news = [[PFUpdateViewController alloc] initWithNibName:@"PFUpdateViewController_Wide" bundle:nil];
+    } else {
+        news = [[PFUpdateViewController alloc] initWithNibName:@"PFUpdateViewController" bundle:nil];
+    }
+    
     [self presentViewController:news animated:NO completion:NULL];
     
     //exit(0);

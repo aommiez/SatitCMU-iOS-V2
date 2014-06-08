@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet CRGradientNavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic) PESatitApiManager *satitApi;
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (retain, nonatomic) NSMutableArray *arrObjGallery;

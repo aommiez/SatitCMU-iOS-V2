@@ -71,7 +71,8 @@ NSString *detailText;
     
     self.satitApi = [[PESatitApiManager alloc] init];
     self.satitApi.delegate = self;
-    [self.satitApi feedLimit:@"5" link:@"NO"];
+    //[self.satitApi feedLimit:@"5" link:@"NO"];
+    [self.satitApi feedLimit:@"NO" link:@"NO"];
     
     self.arrObj = [[NSMutableArray alloc] init];
     self.arrObjGallery = [[NSMutableArray alloc] init];
@@ -499,10 +500,15 @@ NSString *detailText;
 #pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+    //[self.hidingView scrollViewDidScroll:scrollView];
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    //[self.hidingView scrollViewWillBeginDragging:scrollView];
+    
     if ( scrollView.contentOffset.y < 0.0f ) {
+        
+        [self reloadData:YES];
         //NSLog(@"refreshData < 0.0f");
         [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -517,11 +523,11 @@ NSString *detailText;
     //NSLog(@"%f",scrollView.contentOffset.y);
     if (scrollView.contentOffset.y < -60.0f ) {
         refreshDataNe = YES;
-        
-        self.satitApi = [[PESatitApiManager alloc] init];
-        self.satitApi.delegate = self;
-        [self.satitApi feedLimit:@"5" link:@"NO"];
-        
+
+//        self.satitApi = [[PESatitApiManager alloc] init];
+//        self.satitApi.delegate = self;
+//        [self.satitApi feedLimit:@"5" link:@"NO"];
+
     } else {
         self.loadLabel.text = @"";
         self.act.alpha = 0;
@@ -529,15 +535,15 @@ NSString *detailText;
     }
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
+
     if ( scrollView.contentOffset.y < -100.0f ) {
         //NSLog(@"refreshData < -100.0f");
         [UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
-        self.tableView.frame = CGRectMake(0, 60, 320, self.tableView.frame.size.height);
+        self.tableView.frame = CGRectMake(0, 60, 320, self.view.frame.size.height);
 		[UIView commitAnimations];
         [self performSelector:@selector(resizeTable) withObject:nil afterDelay:2];
-        
+
     } else {
         self.loadLabel.text = @"";
         self.act.alpha = 0;
@@ -558,13 +564,13 @@ NSString *detailText;
     }
 }
 - (void)resizeTable {
-    
+
     self.loadLabel.text = @"";
     self.act.alpha = 0;
-    
+
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
-    self.tableView.frame = CGRectMake(0, 0, 320, self.tableView.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, 320, self.view.frame.size.height);
     [UIView commitAnimations];
 }
 

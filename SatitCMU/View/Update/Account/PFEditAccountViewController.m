@@ -118,6 +118,7 @@ BOOL newMedia;
 - (void)SaveProfile {
     
     [self hideKeyboard];
+    
     [self.satitApi updateUserProfileEmail:self.editEmailTextField.text phone:self.editPhoneNumberTextField.text];
     
     if (self.pushNews.on){
@@ -147,6 +148,16 @@ BOOL newMedia;
                                           otherButtonTitles:@"OK", nil];
     [alert show];
 }
+//
+//- (void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if (buttonIndex == 1)
+//    {
+//        
+//    } else {
+//        //go to profile setting
+//    }
+//}
 
 - (void)PESatitApiManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
     
@@ -176,8 +187,6 @@ BOOL newMedia;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    [self.delegate HideTabbar];
     
     if ( buttonIndex == 0 ) {
         [self useCamera];
@@ -220,6 +229,7 @@ BOOL newMedia;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
     image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
     NSData *imageData1 = UIImageJPEGRepresentation(image, 75);
     [self.satitApi uploadPicture:imageData1];

@@ -8,7 +8,9 @@
 
 #import "PFTabBarViewController.h"
 #define kTabBarHeight 48
+
 int oldIndex;
+
 @interface PFTabBarViewController ()
 
 - (void)updateTabBarItem:(id)sender;

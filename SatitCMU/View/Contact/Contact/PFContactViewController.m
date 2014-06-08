@@ -258,6 +258,7 @@
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     
     if  ([buttonTitle isEqualToString:@"Send Email"]) {
+        [self.delegate HideTabbar];
         NSLog(@"Send Email");
         // Email Subject
         NSString *emailTitle = @"Satit Email";
@@ -370,6 +371,7 @@
     
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.delegate ShowTabbar];
 }
 
 - (void)PFWebViewViewControllerBack {
