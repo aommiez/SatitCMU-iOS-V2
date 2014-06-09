@@ -524,9 +524,10 @@ NSString *detailText;
     if (scrollView.contentOffset.y < -60.0f ) {
         refreshDataNe = YES;
 
-//        self.satitApi = [[PESatitApiManager alloc] init];
-//        self.satitApi.delegate = self;
-//        [self.satitApi feedLimit:@"5" link:@"NO"];
+        self.satitApi = [[PESatitApiManager alloc] init];
+        self.satitApi.delegate = self;
+        //[self.satitApi feedLimit:@"5" link:@"NO"];
+        [self.satitApi feedLimit:@"NO" link:@"NO"];
 
     } else {
         self.loadLabel.text = @"";
