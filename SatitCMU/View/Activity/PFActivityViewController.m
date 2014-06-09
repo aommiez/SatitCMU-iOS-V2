@@ -228,8 +228,7 @@ BOOL refreshDataAc;
 #pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-	//NSLog(@"%f",scrollView.contentOffset.y);
-	//[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+
     
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

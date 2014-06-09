@@ -436,7 +436,7 @@ BOOL refreshData;
 
 - (void)PESatitApiManager:(id)sender getCommentObjectIdResponse:(NSDictionary *)response {
     
-    //NSLog(@"%@",response);
+    NSLog(@"%@",response);
     
     if (!refreshData) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {

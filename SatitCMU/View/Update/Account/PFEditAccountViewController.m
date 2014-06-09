@@ -66,8 +66,17 @@ BOOL newMedia;
     self.editPhoneNumberTextField.delegate = self;
     self.editPasswordTextField.delegate = self;
     
-    NSString *picStr = [[NSString alloc] initWithFormat:@"%@user/%@/picture",API_URL,[self.coreData objectForKey:@"id"]];
+    NSDate *currentTime = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSDayCalendarUnit |NSMonthCalendarUnit |NSYearCalendarUnit |NSHourCalendarUnit | NSMinuteCalendarUnit| NSSecondCalendarUnit) fromDate:currentTime];
+    
+    int mins = (int)[components minute];
+    int sec= (int)[components second];
+    NSLog(@"%d",sec);
+    
+    NSString *picStr = [[NSString alloc] initWithFormat:@"%@user/%@/picture?time=%d%d",API_URL,[self.coreData objectForKey:@"id"],sec,mins];
     self.picImg.imageURL = [[NSURL alloc] initWithString:picStr];
+    
     NSString *editfbname = [[NSString alloc] initWithFormat:@"facebook.com/%@",[self.coreData objectForKey:@"username"]];
     
     self.editFacebookNameTextField.text = editfbname;

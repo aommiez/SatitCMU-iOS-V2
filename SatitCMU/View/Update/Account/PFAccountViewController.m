@@ -68,7 +68,15 @@
     self.emailShow.text = [self.coreData objectForKey:@"email_show"];
     self.telShow.text = [self.coreData objectForKey:@"phone_show"];
     
-    NSString *picStr = [[NSString alloc] initWithFormat:@"%@user/%@/picture",API_URL,[self.coreData objectForKey:@"id"]];
+    NSDate *currentTime = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSDayCalendarUnit |NSMonthCalendarUnit |NSYearCalendarUnit |NSHourCalendarUnit | NSMinuteCalendarUnit| NSSecondCalendarUnit) fromDate:currentTime];
+    
+    int mins = (int)[components minute];
+    int sec= (int)[components second];
+    NSLog(@"%d",sec);
+    
+    NSString *picStr = [[NSString alloc] initWithFormat:@"%@user/%@/picture?time=%d%d",API_URL,[self.coreData objectForKey:@"id"],sec,mins];
     self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
 
 }
