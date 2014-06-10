@@ -38,8 +38,6 @@ BOOL refreshData;
 {
     [super viewDidLoad];
     
-    //NSLog(@"%@",self.obj);
-    
     maxH = 0;
     noData = NO;
     refreshData = NO;
@@ -436,7 +434,7 @@ BOOL refreshData;
 
 - (void)PESatitApiManager:(id)sender getCommentObjectIdResponse:(NSDictionary *)response {
     
-    NSLog(@"%@",response);
+    //NSLog(@"%@",response);
     
     if (!refreshData) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
@@ -694,6 +692,14 @@ BOOL refreshData;
 
 - (void)PFSeeAccountViewController:(id)sender viewPicture:(NSString *)link {
    [self.delegate PFUpdateViewControllerPhoto:link];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    if ( scrollView.contentOffset.y < 0.0f ) {
+        [self.satitApi getNewsLikeComments:[self.obj objectForKey:@"id"]];
+        
+    }
 }
 
 @end

@@ -67,11 +67,13 @@ NSString *password;
     
     [self.view addSubview:self.loginView];
 
-    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 80, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
         NSLog(@"animation ok");
     }];
+    
+    self.menu = @"";
     
 }
 
@@ -83,7 +85,7 @@ NSString *password;
 
 #pragma mark - function helper
 - (void)delView {
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:0.0
                           delay:0.0
                         options: UIViewAnimationCurveEaseInOut
                      animations:^{self.blurView.alpha = 0;}
@@ -103,7 +105,7 @@ NSString *password;
 -(void)dateBirthButtonClicked {
     self.registerView.alpha = 1;
     self.blurView.userInteractionEnabled = YES;
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:0.0
                           delay:0.0  /* starts the animation after 3 seconds */
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
@@ -131,12 +133,12 @@ NSString *password;
 - (void)closeBox {
     [self hideKeyboard];
     
-    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 600, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
         //[self.view removeFromSuperview];
     }];
-    [UIView mt_animateViews:@[self.registerView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.registerView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
         self.registerView.frame = CGRectMake(20, 600, self.registerView.frame.size.width, self.registerView.frame.size.height);
     } completion:^{
         //[self.view removeFromSuperview];
@@ -156,10 +158,10 @@ NSString *password;
     [scrollview addSubview:self.registerView];
     [self.view addSubview:scrollview];
     
-    [UIView mt_animateViews:@[self.loginView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
+    [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 600, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
-        [UIView mt_animateViews:@[self.registerView] duration:0.3 timingFunction:kMTEaseOutBack animations:^{
+        [UIView mt_animateViews:@[self.registerView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
             self.registerView.frame = CGRectMake(20, 70, self.registerView.frame.size.width, self.registerView.frame.size.height);
         } completion:^{
             NSLog(@"animation ok");
@@ -191,7 +193,7 @@ NSString *password;
     [self hideKeyboard];
     self.registerView.alpha = 0;
     self.blurView.userInteractionEnabled = NO;
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:0.0
                           delay:0.0  /* starts the animation after 3 seconds */
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
@@ -347,7 +349,7 @@ NSString *password;
     } else if ([self.menu isEqualToString:@"notify"]) {
         self.menu = @"";
         [self.delegate PFNotifyViewController:self];
-        
+    
     }
     
 }
