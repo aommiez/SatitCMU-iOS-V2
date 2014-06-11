@@ -119,10 +119,7 @@
             NSString *filePathz = [resourceDocPath stringByAppendingPathComponent:nameId];
             [manager removeItemAtPath:filePathz error:nil];
         }
-    
         [self.navigationController popViewControllerAnimated:YES];
-    
-    //}
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {

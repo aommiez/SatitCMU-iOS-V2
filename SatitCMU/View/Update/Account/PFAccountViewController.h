@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 - (IBAction)logoutTapped:(id)sender;
+- (IBAction)picFullTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameShow;
 @property (weak, nonatomic) IBOutlet UITextField *facebookNameShow;
@@ -40,7 +41,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *telShow;
 @property NSDictionary *coreData;
 @property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
-- (IBAction)picFullTapped:(id)sender;
 @property (nonatomic, strong) UIImagePickerController *ctr;
 
 @property (strong, nonatomic) PESatitApiManager *satitApi;

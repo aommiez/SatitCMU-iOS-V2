@@ -26,6 +26,7 @@
 
 @interface PFUpdateDetailViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) PESatitApiManager *satitApi;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
@@ -48,7 +49,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *postBut;
 @property (weak, nonatomic) IBOutlet UITextView *textComment;
 
-@property (assign, nonatomic) id <PFUpdateDetailViewControllerDelegate> delegate;
 @property (strong, nonatomic) PFLoginViewController *loginView;
 
 - (IBAction)likeTapped:(id)sender;
