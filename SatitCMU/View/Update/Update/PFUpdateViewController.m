@@ -101,7 +101,6 @@ NSString *detailText;
         
         [self.satitApi setTokenForGuest];
         self.loginView = [[PFLoginViewController alloc] init];
-        self.loginView.menu = @"account";
         self.loginView.delegate = self;
         [self.view addSubview:self.loginView.view];
         
@@ -128,7 +127,6 @@ NSString *detailText;
         
         [self.satitApi setTokenForGuest];
         self.loginView = [[PFLoginViewController alloc] init];
-        self.loginView.menu = @"notify";
         self.loginView.delegate = self;
         [self.view addSubview:self.loginView.view];
         
@@ -583,34 +581,6 @@ NSString *detailText;
     } else {
         self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
     }
-}
-
-- (void)PFAccountViewController:(id)sender{
-    [self.delegate HideTabbar];
-    
-    PFAccountViewController *accountView = [[PFAccountViewController alloc] init];
-    
-    if (IS_WIDESCREEN) {
-        accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
-    } else {
-        accountView = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
-    }
-    accountView.delegate = self;
-    [self.navController pushViewController:accountView animated:YES];
-}
-
-- (void)PFNotifyViewController:(id)sender{
-    [self.delegate HideTabbar];
-    
-    PFNotifyViewController *notifyView = [[PFNotifyViewController alloc] init];
-    
-    if (IS_WIDESCREEN) {
-        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController_Wide" bundle:nil];
-    } else {
-        notifyView = [[PFNotifyViewController alloc] initWithNibName:@"PFNotifyViewController" bundle:nil];
-    }
-    notifyView.delegate = self;
-    [self.navController pushViewController:notifyView animated:YES];
 }
 
 - (void)PFAccountViewControllerBack {

@@ -13,12 +13,6 @@
 #import "UIView+MTAnimation.h"
 #import "PESatitApiManager.h"
 
-@protocol PFLoginViewControllerDelegate <NSObject>
-
-- (void)PFAccountViewController:(id)sender;
-- (void)PFNotifyViewController:(id)sender;
-
-@end
 @interface PFLoginViewController : UIViewController <FBLoginViewDelegate,UITextFieldDelegate>
 
 @property (assign, nonatomic) id delegate;
@@ -45,7 +39,5 @@
 
 @property (retain, nonatomic) UIDatePicker *pick;
 @property (retain, nonatomic) UIButton *pickDone;
-
-@property (strong, nonatomic) NSString *menu;
 
 @end

@@ -65,15 +65,20 @@ NSString *password;
     self.registerView.frame = CGRectMake(20, 600, self.registerView.frame.size.width, self.registerView.frame.size.height);
     self.loginView.frame = CGRectMake(20, 600, self.loginView.frame.size.width, self.loginView.frame.size.height);
     
-    [self.view addSubview:self.loginView];
+    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    scrollview.contentSize = CGSizeMake(320, 700);
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+    [scrollview addGestureRecognizer:singleTap];
+    
+    [scrollview addSubview:self.loginView];
+    [self.view addSubview:scrollview];
 
     [UIView mt_animateViews:@[self.loginView] duration:0.0 timingFunction:kMTEaseOutBack animations:^{
         self.loginView.frame = CGRectMake(20, 80, self.loginView.frame.size.width, self.loginView.frame.size.height);
     } completion:^{
         NSLog(@"animation ok");
     }];
-    
-    self.menu = @"";
     
 }
 
@@ -290,16 +295,7 @@ NSString *password;
     } else {
         [self.satitApi saveToCoreData:response];
         [self closeBox];
-        
-        if ([self.menu isEqualToString:@"account"]) {
-            self.menu = @"";
-            [self.delegate PFAccountViewController:self];
-            
-        } else if ([self.menu isEqualToString:@"notify"]) {
-            self.menu = @"";
-            [self.delegate PFNotifyViewController:self];
-            
-        }
+    
     }
 }
 
@@ -341,16 +337,6 @@ NSString *password;
     //NSLog(@"%@",response);
     [self.satitApi saveToCoreData:response];
     [self closeBox];
-    
-    if ([self.menu isEqualToString:@"account"]) {
-        self.menu = @"";
-        [self.delegate PFAccountViewController:self];
-        
-    } else if ([self.menu isEqualToString:@"notify"]) {
-        self.menu = @"";
-        [self.delegate PFNotifyViewController:self];
-    
-    }
     
 }
 - (void)PESatitApiManager:(id)sender loginWithFacebookErrorResponse:(NSString *)errorResponse {
