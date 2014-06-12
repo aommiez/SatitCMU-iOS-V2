@@ -140,6 +140,11 @@ BOOL newMedia;
     } else {
         [self.satitApi setPushShowcase:@"new_showcase" onoff:@"0"];
     }
+    if (self.pushActivity.on){
+        [self.satitApi setPushActivity:@"new_lesson" onoff:@"1"];
+    } else {
+        [self.satitApi setPushActivity:@"new_lesson" onoff:@"0"];
+    }
     if (self.pushFromSatit.on){
         [self.satitApi setPushFrom:@"news_from_dancezone" onoff:@"1"];
     } else {
@@ -183,6 +188,11 @@ BOOL newMedia;
         self.pushShowcase.on = NO;
     } else {
         self.pushShowcase.on = YES;
+    }
+    if ( [[response objectForKey:@"new_lesson"] intValue] == 0 ) {
+        self.pushActivity.on = NO;
+    } else {
+        self.pushActivity.on = YES;
     }
     if ( [[response objectForKey:@"news_from_dancezone"] intValue] == 0 ) {
         self.pushFromSatit.on = NO;

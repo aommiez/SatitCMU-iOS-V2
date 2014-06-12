@@ -177,6 +177,11 @@
     } else {
         self.pushShowcaseShow.on = YES;
     }
+    if ( [[response objectForKey:@"new_lesson"] intValue] == 0 ) {
+        self.pushActivityShow.on = NO;
+    } else {
+        self.pushActivityShow.on = YES;
+    }
     if ( [[response objectForKey:@"news_from_dancezone"] intValue] == 0 ) {
         self.pushFromSatitShow.on = NO;
     } else {

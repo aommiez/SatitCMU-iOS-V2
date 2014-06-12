@@ -339,6 +339,19 @@
         NSLog(@"Error: %@", error);
     }];
 }
+- (void)setPushActivity:(NSString *)type onoff:(NSString *)onoff {
+    NSDictionary *parameters = @{@"new_lesson":onoff};
+    NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/%@/setting",API_URL,[self getUserID]];
+    self.manager = [AFHTTPRequestOperationManager manager];
+    self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [self.manager.requestSerializer setValue:[self getUserToken] forHTTPHeaderField:@"X-Auth-Token"];
+    [self.manager PUT:strUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
 - (void)setPushFrom:(NSString *)type onoff:(NSString *)onoff {
     NSDictionary *parameters = @{@"news_from_dancezone":onoff};
     NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/%@/setting",API_URL,[self getUserID]];

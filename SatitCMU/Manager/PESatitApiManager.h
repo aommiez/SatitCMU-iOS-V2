@@ -164,6 +164,7 @@
 - (void)getUserSetting;
 - (void)setPushNews:(NSString *)type onoff:(NSString *)onoff;
 - (void)setPushShowcase:(NSString *)type onoff:(NSString *)onoff;
+- (void)setPushActivity:(NSString *)type onoff:(NSString *)onoff;
 - (void)setPushFrom:(NSString *)type onoff:(NSString *)onoff;
 - (void)updateUserProfileEmail:(NSString *)email phone:(NSString *)phone;
 - (void)getUserById:(NSString *)userId;

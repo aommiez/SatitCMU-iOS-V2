@@ -47,6 +47,7 @@
 
 @property (retain, nonatomic) IBOutlet UISwitch *pushNewsShow;
 @property (retain, nonatomic) IBOutlet UISwitch *pushShowcaseShow;
+@property (retain, nonatomic) IBOutlet UISwitch *pushActivityShow;
 @property (retain, nonatomic) IBOutlet UISwitch *pushFromSatitShow;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;

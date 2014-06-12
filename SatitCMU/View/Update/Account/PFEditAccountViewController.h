@@ -44,6 +44,7 @@
 
 @property (retain, nonatomic) IBOutlet UISwitch *pushNews;
 @property (retain, nonatomic) IBOutlet UISwitch *pushShowcase;
+@property (retain, nonatomic) IBOutlet UISwitch *pushActivity;
 @property (retain, nonatomic) IBOutlet UISwitch *pushFromSatit;
 
 - (IBAction)pushUpdateChange:(id)sender;
