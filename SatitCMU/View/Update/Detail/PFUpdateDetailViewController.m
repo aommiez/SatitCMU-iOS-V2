@@ -562,6 +562,12 @@ BOOL refreshData;
         [controller addURL:[NSURL URLWithString:urlString]];
         [controller setInitialText:[self.obj objectForKey:@"message"]];
         [self presentViewController:controller animated:YES completion:Nil];
+    }  else {
+        [[[UIAlertView alloc] initWithTitle:@"SatitCMU"
+                                    message:@"โปรด Login Facebook ใน Setting เครื่องก่อนครับ"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
 
 }
