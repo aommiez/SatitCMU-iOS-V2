@@ -234,6 +234,7 @@
  */
 
 - (void)loginWithFacebook:(NSString *)email fbid:(NSString *)fbid firstName:(NSString *)firstName lastName:(NSString *)lastName username:(NSString *)username deviceToken:(NSString *)deviceToken {
+    
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@facebook/login",API_URL];
     self.manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"email":email , @"facebook_id":fbid , @"first_name":firstName , @"last_name":lastName , @"username":username , @"deviceToken":deviceToken };
