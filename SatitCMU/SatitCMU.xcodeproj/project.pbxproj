@@ -1851,6 +1851,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Platwo fusion";
 				TargetAttributes = {
+					36574C7B193841E500F75616 = {
+						DevelopmentTeam = 93QYCC4KL8;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
 					36574C9C193841E600F75616 = {
 						TestTargetID = 36574C7B193841E500F75616;
 					};
@@ -2266,6 +2274,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6CFED42E-3307-452D-BE60-D3527C0BCF0D";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2297,6 +2306,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "6CFED42E-3307-452D-BE60-D3527C0BCF0D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2307,6 +2317,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Platwofusion Co.,Ltd. (Q246MJM9JV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
@@ -2316,6 +2328,7 @@
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";
 				INFOPLIST_FILE = "SatitCMU/SatitCMU-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6CFED42E-3307-452D-BE60-D3527C0BCF0D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2325,6 +2338,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Platwofusion Co.,Ltd. (Q246MJM9JV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
@@ -2334,6 +2349,7 @@
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";
 				INFOPLIST_FILE = "SatitCMU/SatitCMU-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6CFED42E-3307-452D-BE60-D3527C0BCF0D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
