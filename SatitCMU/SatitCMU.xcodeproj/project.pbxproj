@@ -2322,7 +2322,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
-					"/Users/pariwat/SatitCMU-iOS-V2/Frameworks",
+					"\"$(SRCROOT)/../Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";
@@ -2343,7 +2343,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
-					"/Users/pariwat/SatitCMU-iOS-V2/Frameworks",
+					"\"$(SRCROOT)/../Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";
