@@ -19,7 +19,7 @@
 		36574CA1193841E600F75616 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36574C83193841E600F75616 /* UIKit.framework */; };
 		36574CA9193841E600F75616 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36574CA7193841E600F75616 /* InfoPlist.strings */; };
 		36574CAB193841E600F75616 /* SatitCMUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36574CAA193841E600F75616 /* SatitCMUTests.m */; };
-		36574CBA1938444900F75616 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36574CB91938444900F75616 /* FacebookSDK.framework */; };
+		527E1ED51968033600A13176 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527E1ED41968033600A13176 /* FacebookSDK.framework */; };
 		EA0347C8194013FF00563F34 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0347C7194013FF00563F34 /* HeaderView.m */; };
 		EA0347CA1940157900563F34 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0347C91940157900563F34 /* HeaderView.xib */; };
 		EA04241A193C270A003D50DC /* ActivityNoCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA042419193C270A003D50DC /* ActivityNoCommentCell.xib */; };
@@ -345,7 +345,7 @@
 		36574CA6193841E600F75616 /* SatitCMUTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SatitCMUTests-Info.plist"; sourceTree = "<group>"; };
 		36574CA8193841E600F75616 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36574CAA193841E600F75616 /* SatitCMUTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SatitCMUTests.m; sourceTree = "<group>"; };
-		36574CB91938444900F75616 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
+		527E1ED41968033600A13176 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		EA0347C6194013FF00563F34 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		EA0347C7194013FF00563F34 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		EA0347C91940157900563F34 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -838,7 +838,7 @@
 				EAD3C2A6193B0FB0008C1562 /* SystemConfiguration.framework in Frameworks */,
 				EAD3C2A4193B0F99008C1562 /* MobileCoreServices.framework in Frameworks */,
 				36574C82193841E600F75616 /* CoreGraphics.framework in Frameworks */,
-				36574CBA1938444900F75616 /* FacebookSDK.framework in Frameworks */,
+				527E1ED51968033600A13176 /* FacebookSDK.framework in Frameworks */,
 				36574C84193841E600F75616 /* UIKit.framework in Frameworks */,
 				36574C80193841E600F75616 /* Foundation.framework in Frameworks */,
 			);
@@ -879,6 +879,7 @@
 		36574C7E193841E600F75616 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				527E1ED41968033600A13176 /* FacebookSDK.framework */,
 				EAD3C2AF193B108C008C1562 /* dyci.framework */,
 				EAD3C2AD193B0FF0008C1562 /* libxml2.dylib */,
 				EAD3C2AB193B0FE6008C1562 /* libz.dylib */,
@@ -886,7 +887,6 @@
 				EAD3C2A7193B0FB7008C1562 /* CFNetwork.framework */,
 				EAD3C2A5193B0FB0008C1562 /* SystemConfiguration.framework */,
 				EAD3C2A3193B0F99008C1562 /* MobileCoreServices.framework */,
-				36574CB91938444900F75616 /* FacebookSDK.framework */,
 				36574C7F193841E600F75616 /* Foundation.framework */,
 				36574C81193841E600F75616 /* CoreGraphics.framework */,
 				36574C83193841E600F75616 /* UIKit.framework */,
@@ -2323,6 +2323,7 @@
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
 					"\"$(SRCROOT)/../Frameworks\"",
+					"/Users/macbookpro/Documents/Pla2App/SatitCMU-iOS-V2/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";
@@ -2344,6 +2345,7 @@
 					"$(inherited)",
 					"/Users/MRG/Documents/Apps/SatitCMU-iOS-V2/Frameworks",
 					"\"$(SRCROOT)/../Frameworks\"",
+					"/Users/macbookpro/Documents/Pla2App/SatitCMU-iOS-V2/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SatitCMU/SatitCMU-Prefix.pch";

@@ -57,8 +57,8 @@ NSString *password;
     FBLoginView *fbView = [[FBLoginView alloc] init];
     fbView.delegate = self;
     fbView.frame = CGRectMake(20, 123, 240, 60);
-    fbView.readPermissions = @[@"basic_info", @"email"];
-    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info", @"email"]];
+    fbView.readPermissions = @[@"public_profile", @"email"];
+    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"public_profile", @"email"]];
     [FBSession setActiveSession:session];
     [self.loginView addSubview:fbView];
     
@@ -334,7 +334,7 @@ NSString *password;
 }
 
 - (void)PESatitApiManager:(id)sender loginWithFacebookResponse:(NSDictionary *)response {
-    //NSLog(@"%@",response);
+    NSLog(@"%@",response);
     [self.satitApi saveToCoreData:response];
     [self closeBox];
     
@@ -351,6 +351,7 @@ NSString *password;
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
+    
     [self.satitApi loginWithFacebook:[user objectForKey:@"email"] fbid:[user objectForKey:@"id"] firstName:[user objectForKey:@"first_name"] lastName:[user objectForKey:@"last_name"] username:[user objectForKey:@"username"] deviceToken:@"no"];
 }
 
