@@ -321,7 +321,7 @@ NSString *password;
         [self closeBox];
         [self hideKeyboard];
     
-        //[self.satitApi loginWithEmail:[response objectForKey:@"username"] Password:password deviceToken:@"a"];
+        [self.satitApi loginWithEmail:[response objectForKey:@"username"] Password:password deviceToken:@"a"];
     }
 }
 
@@ -352,7 +352,7 @@ NSString *password;
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
     
-    [self.satitApi loginWithFacebook:[user objectForKey:@"email"] fbid:[user objectForKey:@"id"] firstName:[user objectForKey:@"first_name"] lastName:[user objectForKey:@"last_name"] username:[user objectForKey:@"username"] deviceToken:@"no"];
+    [self.satitApi loginWithFacebook:[user objectForKey:@"email"] fbid:[user objectForKey:@"id"] firstName:[user objectForKey:@"first_name"] lastName:[user objectForKey:@"last_name"] username:[user objectForKey:@"name"] deviceToken:@"no"];
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
