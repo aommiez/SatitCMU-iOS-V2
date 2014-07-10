@@ -265,6 +265,7 @@
     }];
 }
 - (void)uploadPicture:(NSData *)imageData {
+
     NSDictionary *parameters = @{@"uid":[self getUserID]};
     NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/%@/picture",API_URL,[self getUserID]];
     /*
